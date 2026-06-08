@@ -1,140 +1,1248 @@
+// ============================================================================
+// Health Assistant Chatbot — Client-side response engine
+// ============================================================================
+// Communication Style: Friendly, professional, simple language, bullet points
+// Safety: Never diagnoses, never prescribes, always encourages professional care
+// ============================================================================
+
 const RESPONSES = {
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // EMERGENCY
+  // ──────────────────────────────────────────────────────────────────────────
   emergency: [
-    `🚨 **IMMEDIATE MEDICAL ATTENTION REQUIRED** 🚨\n\nIf you or someone you are with is experiencing severe chest pain, extreme difficulty breathing, sudden weakness or numbness (especially on one side of the body), heavy bleeding, or loss of consciousness, please **call your local emergency services (e.g., 911, 999, 112) or go to the nearest emergency room immediately.**\n\nDo not wait or try to self-treat. These symptoms can be life-threatening and require immediate evaluation by trained medical professionals.`
+    `🚨 **Please seek emergency medical help right away** 🚨
+
+If you or someone near you is having any of these symptoms, **call your local emergency number (911, 999, or 112) or go to the nearest hospital immediately:**
+
+• Chest pain or pressure
+• Trouble breathing
+• Sudden weakness or numbness on one side of the body
+• Heavy bleeding that won't stop
+• Passing out or confusion
+• Severe head injury
+• Poisoning or overdose
+
+⏱️ **Every second matters.** Do not wait. Do not try to treat these at home. Emergency services are there to help you.`
   ],
-  nutrition: [
-    `### 🥗 Healthy Eating & Nutrition\n\nA balanced diet provides the nutrients your body needs. Here are core principles:\n\n* **Prioritize Whole Foods:** Vegetables, fruits, whole grains (oats, brown rice, quinoa), lean proteins (poultry, fish, beans, tofu), and healthy fats (avocados, nuts, olive oil).\n* **Fill Half Your Plate:** Make half of your meals colorful vegetables and fruits — different colors provide different vitamins and antioxidants.\n* **Limit Added Sugars & Sodium:** Cut back on sugary sodas, processed snacks, and fast food. Excess sugar and sodium are linked to heart disease and Type 2 diabetes.\n* **Watch Portions:** Eat mindfully without distractions. Listen to your body's hunger and fullness cues.\n\n*Remember: Individual needs vary. Consult a dietitian for personalized advice.*`,
-    `### 🥗 Balanced Diet Basics\n\nEating well doesn't have to be complicated. Focus on these principles:\n\n* **Protein with Every Meal:** Include eggs, yogurt, lentils, fish, chicken, or tofu. Protein keeps you full and supports muscle repair.\n* **Complex Carbs for Energy:** Choose whole grains like oats, brown rice, millet, and whole wheat bread over white flour products.\n* **Healthy Fats are Essential:** Include nuts, seeds, avocados, and olive oil. They support brain health and hormone function.\n* **Fiber-Rich Foods:** Beans, lentils, vegetables, and fruits aid digestion and help control blood sugar.\n* **Stay Hydrated:** Drink water throughout the day. Herbal teas and infused water count too.`,
-    `### 🥗 Meal Planning Tips\n\nPlanning ahead makes healthy eating easier:\n\n* **Prep Vegetables in Advance:** Wash and chop veggies for the week and store them in airtight containers.\n* **Cook Grains in Bulk:** Make a large batch of brown rice, quinoa, or millet to use across multiple meals.\n* **Healthy Snacks Ready:** Keep nuts, fruit, yogurt, and cut vegetables accessible for when hunger strikes.\n* **Read Labels:** Look for hidden sugars (high fructose corn syrup, dextrose, sucrose) and high sodium content in packaged foods.\n* **Cook at Home More:** Home-cooked meals generally have fewer calories, less sodium, and healthier fats than restaurant food.`
-  ],
-  exercise: [
-    `### 🏃‍♂️ Physical Activity Guidelines\n\nRegular exercise is one of the best things you can do for your health:\n\n* **Weekly Goal:** At least **150 minutes of moderate-intensity** aerobic activity (brisk walking, cycling) or **75 minutes of vigorous-intensity** (running, aerobics) per week.\n* **Strength Training:** Include muscle-strengthening activities on **2 or more days** per week — weight lifting, bodyweight exercises, or resistance bands.\n* **Break Up Sitting:** Stand and stretch for 5 minutes every hour. A short walk after meals aids digestion and blood sugar control.\n* **Start Where You Are:** If new to exercise, begin with 5–10 minutes of walking daily and gradually increase.\n\n*Note: Consult a doctor before starting a new exercise program if you have health conditions.*`,
-    `### 🏃‍♂️ Types of Exercise for Overall Health\n\nA well-rounded fitness routine includes:\n\n* **Cardiovascular Exercise:** Walking, jogging, swimming, cycling, dancing — improves heart and lung health.\n* **Strength Training:** Push-ups, squats, lunges, weight lifting — builds muscle, strengthens bones, boosts metabolism.\n* **Flexibility & Stretching:** Yoga, pilates, or simple stretching — improves range of motion and reduces injury risk.\n* **Balance Exercises:** Standing on one leg, tai chi — especially important as we age to prevent falls.\n\n*Aim to move your body in ways you enjoy. Consistency matters more than intensity.*`,
-    `### 🏃‍♂️ Fitness for Beginners\n\nStarting a fitness routine:\n\n* **Start Small:** Even 10 minutes of walking is a win. Gradually increase by 5 minutes each week.\n* **Listen to Your Body:** Some soreness is normal, but sharp pain is a signal to stop.\n* **Warm Up & Cool Down:** Always start with 5 minutes of light movement and end with stretching.\n* **Find an Activity You Enjoy:** You're more likely to stick with exercise you look forward to.\n* **Track Progress:** Use a journal or app to record your activities. Seeing progress keeps you motivated.`
-  ],
-  sleep: [
-    `### 😴 Sleep Hygiene Improvement\n\nMost adults need 7–9 hours of quality sleep per night. Here's how to improve yours:\n\n1. **Consistent Schedule:** Go to bed and wake up at the same time every day, even weekends.\n2. **Optimize Your Room:** Keep it dark, quiet, and cool (60–67°F / 15–19°C).\n3. **Screen-Free Wind-Down:** Turn off phones, tablets, and TVs at least 30–60 minutes before bed. Blue light suppresses melatonin.\n4. **Avoid Late Stimulants:** Skip heavy meals, caffeine, and alcohol close to bedtime.\n5. **Relaxation Routine:** Read a book, take a warm bath, or practice deep breathing before sleep.`,
-    `### 😴 Understanding Sleep Cycles\n\nSleep isn't just rest — it's an active process:\n\n* **Deep Sleep:** The body repairs tissues, builds bone and muscle, and strengthens the immune system.\n* **REM Sleep:** The brain processes emotions, consolidates memories, and supports learning.\n* **Light Sleep:** Transition phase between wakefulness and deep sleep.\n\n*To get enough of each stage, aim for uninterrupted 7–9 hours. Waking up mid-cycle can leave you feeling groggy.*`,
-    `### 😴 Natural Sleep Aids\n\nIf you struggle with sleep, try these natural approaches:\n\n* **Magnesium-Rich Foods:** Almonds, spinach, bananas, and pumpkin seeds can promote relaxation.\n* **Herbal Teas:** Chamomile, valerian root, and lavender tea have calming properties.\n* **White Noise or Nature Sounds:** A fan, white noise machine, or rainfall sounds can mask disruptive noises.\n* **Cool Your Room:** A slightly cool environment (around 65°F) signals the body it's time to sleep.\n* **Limit Napping:** If you nap, keep it under 30 minutes and avoid napping after 3 PM.`
-  ],
-  hydration: [
-    `### 💧 Hydration Guidelines\n\nWater is essential for every cell in your body:\n\n* **Daily Target:** About **8–10 cups (2–2.5 liters)** of water daily for adults. Needs vary with activity, climate, and health.\n* **Check Your Urine:** Pale straw color = well hydrated. Dark yellow or amber = drink more water.\n* **Hydration Tips:** Carry a reusable bottle, set reminders, and infuse water with lemon, cucumber, or mint if plain water feels boring.\n* **Eat Your Water:** Fruits and vegetables like watermelon, cucumber, oranges, and tomatoes have high water content.`,
-    `### 💧 Signs of Dehydration\n\nMild dehydration can affect your energy and focus. Watch for:\n\n* **Early Signs:** Thirst, dry mouth, headache, fatigue, dark urine, dizziness.\n* **Moderate Signs:** Rapid heartbeat, reduced urination, irritability, muscle cramps.\n* **Severe Signs (seek medical help):** Confusion, fainting, very dry skin, no urination for 8+ hours.\n\n*Elderly adults and young children are at higher risk for dehydration, especially during hot weather or illness.*`,
-    `### 💧 How Much Water Do You Really Need?\n\nThe "8 glasses a day" rule is a general guideline. Your actual needs depend on:\n\n* **Activity Level:** Add 1–3 cups per hour of exercise.\n* **Climate:** Hot or humid weather increases fluid loss through sweat.\n* **Health Status:** Fever, vomiting, or diarrhea increase water needs.\n* **Pregnancy/Breastfeeding:** Additional fluids are needed.\n\n*Listen to your body. Thirst is a signal that you're already mildly dehydrated.*`
-  ],
-  stress: [
-    `### 🧘‍♀️ Stress Management Techniques\n\nChronic stress can harm your health. Here are proven ways to manage it:\n\n* **Deep Breathing:** Try the 4-7-8 method — inhale for 4 seconds, hold for 7, exhale for 8. Repeat 4 times.\n* **Mindfulness Meditation:** Even 5 minutes of quiet focus on your breath can reduce anxiety.\n* **Physical Activity:** Exercise releases endorphins and reduces stress hormones like cortisol.\n* **Stay Connected:** Talk to trusted friends or family. Sharing feelings reduces emotional burden.\n* **Set Boundaries:** Learn to say no to excessive demands. Prioritize and break tasks into smaller steps.\n\n*If stress feels overwhelming, consider speaking with a counselor or therapist.*`,
-    `### 🧘‍♀️ Mental Wellness Habits\n\nBuilding daily habits for mental health:\n\n* **Gratitude Practice:** Write down 3 things you're grateful for each day. This shifts focus from problems to positives.\n* **Limit News & Social Media:** Constant exposure to negative news can increase anxiety. Set boundaries.\n* **Spend Time in Nature:** A 20-minute walk in a park or green space lowers stress and improves mood.\n* **Quality Sleep:** Poor sleep worsens stress and anxiety. Prioritize your sleep routine.\n* **Creative Outlet:** Journaling, painting, music, or cooking can be therapeutic and reduce mental tension.`,
-    `### 🧘‍♀️ Recognizing Burnout\n\nBurnout is more than just stress — it's physical, emotional, and mental exhaustion:\n\n* **Signs:** Chronic fatigue, cynicism about work/life, reduced performance, irritability, sleep disturbances.\n* **Prevention:** Set clear work-life boundaries, take regular breaks, delegate tasks, and make time for hobbies.\n* **Recovery:** Rest, reduce responsibilities temporarily, seek social support, and consider professional help.\n\n*Burnout is recognized by the World Health Organization as an occupational phenomenon. It's a serious condition that requires attention.*`
-  ],
-  firstaid: [
-    `### 🩹 Basic First Aid\n\nQuick first aid for common injuries:\n\n* **Minor Burns:** Hold under cool running water for 10–15 minutes. Cover with sterile non-stick bandage. Do NOT apply butter, oil, or ice.\n* **Cuts & Scrapes:** Wash gently with mild soap and water. Apply antibiotic ointment and cover with clean bandage.\n* **Nosebleeds:** Sit upright, lean forward (not back), pinch the soft part of your nose for 10 minutes.\n* **Sprains (R.I.C.E.):** **R**est, **I**ce (15–20 min at a time), **C**ompress with elastic bandage, **E**levate above heart.\n\n*For deep wounds, severe burns, head injuries, poisoning, or fractures — call emergency services immediately.*`,
-    `### 🩹 First Aid Kit Essentials\n\nEvery home should have a basic first aid kit:\n\n* Adhesive bandages (various sizes)\n* Sterile gauze pads and medical tape\n* Antiseptic wipes or hydrogen peroxide\n* Antibiotic ointment\n* Tweezers and scissors\n* Elastic bandage (ACE wrap)\n* Pain relievers (acetaminophen, ibuprofen)\n* Thermometer\n* Instant cold packs\n* Disposable gloves\n\n*Check your kit every 6 months and replace expired or used items.*`
-  ],
-  hygiene: [
-    `### 🧼 Personal Hygiene Basics\n\nGood hygiene prevents infections and promotes health:\n\n* **Handwashing:** Wash with soap and water for at least **20 seconds** — especially before eating, after the bathroom, and after coughing/sneezing.\n* **Oral Care:** Brush twice daily with fluoride toothpaste, floss daily, and replace your toothbrush every 3–4 months.\n* **Shower Regularly:** Bathe daily to remove sweat, oil, and dead skin cells. Dry thoroughly, especially between toes.\n* **Respiratory Etiquette:** Cough or sneeze into your elbow or a tissue. Dispose of tissues immediately.`
-  ],
-  preventive: [
-    `### 🩺 Preventive Healthcare\n\nPreventive care catches problems early or prevents them entirely:\n\n* **Annual Check-ups:** Visit your primary care doctor yearly to monitor blood pressure, weight, and overall health.\n* **Vaccinations:** Stay current on flu shots, tetanus boosters, and other recommended vaccines.\n* **Screenings:** Regular blood pressure checks, cholesterol tests, blood glucose tests, and age-appropriate cancer screenings.\n* **Self-Exams:** Monitor your skin for changing moles, and perform breast or testicular self-exams monthly.\n\n*Prevention is always better than treatment. Early detection saves lives.*`,
-    `### 🩺 Health Screenings by Age\n\nRecommended screenings vary by age and risk factors:\n\n* **20s–30s:** Blood pressure (every 2 years), cholesterol (every 4–6 years), Pap smear (women), dental exam (yearly).\n* **40s:** Diabetes screening (every 3 years), eye exam (every 2 years), mammograms (women, starting at 40–45).\n* **50s:** Colon cancer screening (colonoscopy every 10 years), prostate cancer discussion (men), bone density test.\n* **60+:** Annual hearing test, shingles vaccine, pneumonia vaccine, falls risk assessment.\n\n*Talk to your doctor about which screenings are right for you based on your personal and family history.*`
-  ],
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // DISEASES & MEDICAL CONDITIONS
+  // ──────────────────────────────────────────────────────────────────────────
   diabetes: [
-    `### 🧬 Understanding Diabetes\n\nDiabetes is a condition where blood sugar levels are too high. Here's what you should know:\n\n* **Type 1 Diabetes:** The immune system attacks insulin-producing cells. Requires lifelong insulin therapy. Usually diagnosed in childhood.\n* **Type 2 Diabetes:** The body becomes resistant to insulin or doesn't produce enough. Strongly linked to lifestyle factors. Can sometimes be managed with diet, exercise, and oral medications.\n* **Gestational Diabetes:** Develops during pregnancy and usually resolves after childbirth, but increases future risk of Type 2 diabetes.\n\n*Management includes monitoring blood sugar, healthy eating, regular physical activity, and medication as prescribed.*`,
-    `### 🧬 Managing Diabetes Through Lifestyle\n\nFor those with or at risk for diabetes:\n\n* **Carbohydrate Management:** Focus on complex carbs (whole grains, legumes, vegetables) over simple sugars. Spread carb intake evenly throughout the day.\n* **Fiber is Your Friend:** High-fiber foods slow sugar absorption. Aim for lentils, beans, oats, vegetables, and fruits with skin.\n* **Regular Exercise:** Physical activity helps cells use insulin more effectively. Even a 30-minute walk after meals can significantly lower blood sugar spikes.\n* **Weight Management:** Losing even 5–7% of body weight can improve insulin sensitivity and blood sugar control.\n* **Monitor Your Feet:** Diabetes can reduce foot sensation. Check feet daily for cuts, blisters, or sores.\n\n*Always work with your healthcare team to manage your diabetes treatment plan.*`
+    `### 🧬 Understanding Diabetes
+
+**What is it?**
+Diabetes is a condition where blood sugar levels stay too high. Think of insulin as a key that unlocks your cells to let sugar in. In diabetes, either the body doesn't make enough insulin, or the cells don't respond to it properly.
+
+**Main types:**
+• **Type 1 diabetes** — The body stops making insulin. Starts in childhood or young adulthood. Requires daily insulin shots. Not preventable.
+• **Type 2 diabetes** — The body becomes resistant to insulin. Strongly linked to weight, diet, and activity level. Can sometimes be prevented or managed with lifestyle changes.
+• **Gestational diabetes** — Appears during pregnancy and usually goes away after childbirth, but raises the risk of Type 2 later.
+
+**Common signs to watch for:**
+Feeling very thirsty, urinating often, blurry vision, slow-healing cuts, tingling in hands or feet, feeling very tired.
+
+**What helps?**
+• Eating regular meals with plenty of vegetables and whole grains
+• Staying physically active — even a daily 30-minute walk helps
+• Keeping a healthy weight
+• Taking medications or insulin exactly as your doctor advises
+• Checking blood sugar levels regularly
+
+💡 *Everyone's diabetes journey is different. Work closely with your healthcare team to find what works best for you.*`,
+    `### 🧬 Living Well with Diabetes
+
+If you or someone you know has diabetes, these habits can make a real difference:
+
+**Eating tips:**
+• Fill half your plate with vegetables — they add fiber and nutrients without spiking blood sugar
+• Choose whole grains like brown rice, oats, millets, and whole wheat over white rice or refined flour
+• Include protein (dal, eggs, fish, chicken, tofu) at every meal — it keeps you full and helps steady blood sugar
+• Limit sugary drinks, sweets, and packaged snacks
+• Eat at regular times rather than skipping meals
+
+**Staying active:**
+• Walking for 20–30 minutes after meals helps lower blood sugar naturally
+• Any movement counts — stretching, household chores, climbing stairs
+
+**Things to keep in mind:**
+• Check your feet daily for cuts or blisters — diabetes can reduce feeling in your feet
+• Stay hydrated with water
+• Get regular eye and kidney check-ups
+
+⚠️ *This is educational information. If you have diabetes, your doctor or diabetes educator can give you a plan that fits your personal needs.*`
   ],
+
   bloodpressure: [
-    `### ❤️ Understanding Blood Pressure\n\nBlood pressure measures the force of blood against your artery walls:\n\n* **Normal:** Below 120/80 mmHg\n* **Elevated:** 120–129 / below 80\n* **Stage 1 Hypertension:** 130–139 / 80–89\n* **Stage 2 Hypertension:** 140+ / 90+\n* **Hypertensive Crisis:** 180+ / 120+ — seek emergency care\n\n*High blood pressure often has no symptoms, which is why it's called the "silent killer." Regular monitoring is essential.*`,
-    `### ❤️ Managing High Blood Pressure\n\nLifestyle changes can significantly lower blood pressure:\n\n* **Reduce Sodium:** Aim for less than 2,300 mg per day (about 1 teaspoon of salt). Avoid processed foods, canned soups, and fast food.\n* **DASH Diet:** Emphasize fruits, vegetables, whole grains, lean dairy, and nuts while limiting red meat and sweets.\n* **Regular Exercise:** 150 minutes of moderate activity per week can lower pressure by 5–8 mmHg.\n* **Limit Alcohol:** No more than 1 drink per day for women, 2 for men.\n* **Manage Stress:** Chronic stress contributes to hypertension. Practice relaxation techniques.\n* **Medication Adherence:** If prescribed blood pressure medication, take it consistently even when you feel fine.`
+    `### ❤️ Understanding Blood Pressure
+
+**What is blood pressure?**
+It's the force of blood pushing against the walls of your arteries. A normal reading is below 120/80. The top number (systolic) measures pressure when your heart beats. The bottom number (diastolic) measures pressure between beats.
+
+**Categories:**
+• **Normal:** Below 120/80
+• **Elevated:** 120–129 / below 80
+• **High (Stage 1):** 130–139 / 80–89
+• **High (Stage 2):** 140+ / 90+
+• **Crisis level:** 180+ / 120+ — needs emergency care
+
+**What's important to know:**
+High blood pressure often has **no symptoms at all**. That's why it's called the "silent killer." Many people feel perfectly fine but still have dangerously high readings. The only way to know is to get it checked.
+
+**Lifestyle steps that help:**
+• Reduce salt — aim for less than 1 teaspoon (about 2300 mg) per day
+• Eat more fruits, vegetables, and whole grains (the DASH diet is a good example)
+• Walk or exercise for at least 30 minutes most days
+• Limit alcohol to 1 drink per day or less
+• Find healthy ways to manage stress
+• If prescribed medication, take it every day — even when you feel fine`,
+    `### ❤️ Managing High Blood Pressure Naturally
+
+Many people can lower their blood pressure with lifestyle changes alone. Here's what research shows works:
+
+**Cut back on sodium:**
+Most sodium comes from packaged and restaurant food, not your salt shaker. Check labels — anything with more than 400 mg sodium per serving is high. Cook at home more so you control the salt.
+
+**The DASH diet approach:**
+DASH stands for "Dietary Approaches to Stop Hypertension." It means:
+• Lots of vegetables and fruits
+• Whole grains instead of refined
+• Low-fat or fat-free dairy
+• Fish, poultry, beans, and nuts
+• Less red meat, sweets, and sugary drinks
+
+**Other helpful habits:**
+• Lose even a small amount of weight — losing 5–10 pounds can make a difference
+• Walk briskly for 30 minutes daily
+• Practice deep breathing or meditation for stress
+• Get 7–8 hours of sleep each night
+
+⚠️ *These are general lifestyle tips. If you have high blood pressure, work with your doctor to decide the best approach for you. Never stop or change prescribed medication without talking to your doctor first.*`
   ],
+
   heart: [
-    `### ❤️ Heart Health Basics\n\nCardiovascular disease is the leading cause of death globally. Protect your heart:\n\n* **Know Your Numbers:** Blood pressure, cholesterol, blood sugar, and BMI. Keep them in healthy ranges.\n* **Heart-Healthy Diet:** Mediterranean-style eating — olive oil, fish, nuts, legumes, whole grains, and plenty of vegetables.\n* **Stay Active:** Regular exercise strengthens the heart muscle and improves circulation.\n* **Don't Smoke:** Smoking damages blood vessels and is a major risk factor for heart attacks.\n* **Know the Warning Signs:** Chest pain or discomfort, shortness of breath, pain in the arm/jaw/back, cold sweat, nausea.\n\n*If you experience heart attack symptoms, call emergency services immediately. Every minute matters.*`,
-    `### ❤️ Cholesterol Explained\n\nCholesterol is a waxy substance in your blood. Two main types:\n\n* **LDL (Low-Density Lipoprotein) — "Bad" Cholesterol:** High levels can clog arteries. Keep it low.\n* **HDL (High-Density Lipoprotein) — "Good" Cholesterol:** Helps remove LDL from arteries. Higher is better.\n* **Triglycerides:** Another type of fat in the blood. High levels increase heart disease risk.\n\n*Dietary changes to improve cholesterol: Eat more soluble fiber (oats, beans, apples), omega-3s (salmon, walnuts, flaxseeds), and plant sterols. Limit saturated and trans fats.*`
+    `### ❤️ Heart Health Basics
+
+Your heart is a muscle that works 24/7 to pump blood through your body. Taking care of it is one of the most important things you can do.
+
+**What raises heart disease risk?**
+• Smoking or tobacco use 🚬
+• High blood pressure
+• High cholesterol
+• Diabetes
+• Being overweight
+• Not enough physical activity
+• Too much alcohol
+• A diet high in fried foods, sugar, and processed items
+
+**Signs that need medical attention:**
+• Chest discomfort — pressure, squeezing, or pain
+• Pain spreading to the shoulder, arm, neck, or jaw
+• Shortness of breath
+• Cold sweat, nausea, or lightheadedness
+
+**What protects your heart?**
+• Eat more vegetables, fruits, whole grains, and healthy fats (olive oil, nuts, fish)
+• Walk or exercise for 30 minutes most days
+• Maintain a healthy weight
+• Don't smoke
+• Limit alcohol
+• Manage stress
+• Get regular health check-ups
+
+💡 *Heart disease is largely preventable. Small daily habits add up to big protection over time.*
+
+⚠️ *If you have chest pain or any of the warning signs above, call emergency services right away — don't wait.*`,
+    `### ❤️ Understanding Cholesterol
+
+**What is cholesterol?**
+Cholesterol is a waxy substance found in your blood. Your body needs some of it to build cells, but too much can stick to artery walls and narrow them — like a pipe getting clogged.
+
+**The two main types:**
+• **LDL (low-density lipoprotein):** Often called "bad" cholesterol. High levels can build up in arteries.
+• **HDL (high-density lipoprotein):** Often called "good" cholesterol. It helps remove LDL from your arteries.
+
+**Ways to improve your numbers:**
+• Eat more **soluble fiber** — oats, beans, apples, carrots, and barley help lower LDL
+• Include **healthy fats** — olive oil, avocados, nuts, and fatty fish like salmon
+• Cut back on **saturated fats** — found in red meat, butter, cheese, and fried foods
+• Avoid **trans fats** — listed as "partially hydrogenated oils" on labels
+• Stay active — exercise boosts HDL
+
+⚠️ *A blood test is the only way to know your cholesterol levels. Talk to your doctor about what your numbers mean for you.*`
   ],
+
   cancer: [
-    `### 🧬 Cancer Awareness\n\nCancer is a group of diseases involving abnormal cell growth. Key facts:\n\n* **Early Detection Saves Lives:** Many cancers are highly treatable when caught early. Regular screenings are crucial.\n* **Common Warning Signs:** Unexplained weight loss, persistent fever, unusual lumps, changes in skin moles, persistent cough or hoarseness, changes in bowel/bladder habits.\n* **Risk Reduction:** Don't smoke, maintain a healthy weight, limit alcohol, protect your skin from sun, eat a fiber-rich diet, stay active.\n* **Screening Matters:** Mammograms (breast), colonoscopy (colon), Pap smears (cervical), PSA tests (prostate), low-dose CT (lung for smokers).\n\n*If you notice persistent changes in your body, see a doctor. Not all lumps or changes are cancer, but they should be evaluated.*`
+    `### 🧬 Cancer Awareness — What You Should Know
+
+**What is cancer?**
+Cancer is a group of diseases where some of the body's cells grow out of control and crowd out normal cells. There are many types, and each behaves differently.
+
+**Common warning signs to be aware of:**
+• A lump or thickening under the skin
+• Unexplained weight loss (without trying)
+• Changes in a mole — size, shape, or color
+• A persistent cough or hoarseness lasting more than 3 weeks
+• Changes in bowel or bladder habits
+• Sores that don't heal
+• Unexplained pain that doesn't go away
+
+**Important: Many things can cause these symptoms, not just cancer. But it's always wise to get them checked.**
+
+**What reduces your risk?**
+• Don't smoke or use tobacco — this is the single biggest step
+• Maintain a healthy weight
+• Eat plenty of fruits, vegetables, and whole grains
+• Limit alcohol
+• Protect your skin from the sun with SPF 30+ sunscreen
+• Stay physically active
+• Get recommended screenings (mammograms, colonoscopy, Pap smear, etc.)
+
+💡 *Many cancers are highly treatable when found early. Regular check-ups and being aware of your body matter.*
+
+⚠️ *This information is for education. If you notice unusual changes in your body, please see a doctor for proper evaluation.*`
   ],
-  asthma: [
-    `### 🌬️ Understanding Asthma\n\nAsthma is a chronic condition where airways become inflamed and narrow:\n\n* **Common Triggers:** Allergens (pollen, dust mites, mold), air pollution, cold air, exercise, respiratory infections, stress.\n* **Symptoms:** Wheezing, shortness of breath, chest tightness, coughing (especially at night or early morning).\n* **Management:**\n  * Use controller medications (inhaled corticosteroids) daily as prescribed.\n  * Use rescue inhalers (bronchodilators) during attacks.\n  * Identify and avoid personal triggers.\n  * Have an asthma action plan from your doctor.\n\n*If your rescue inhaler isn't relieving symptoms, seek emergency medical help.*`
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // SYMPTOMS & POSSIBLE CAUSES
+  // ──────────────────────────────────────────────────────────────────────────
+  symptoms: [
+    `### 🔍 Understanding Symptoms — A General Guide
+
+Symptoms are your body's way of telling you something may be off. It's important to pay attention, but also important not to jump to conclusions.
+
+**Common symptoms and what they might suggest:**
+
+• **Headache:** Tension, dehydration, eye strain, lack of sleep, sinus issues. Most headaches are not serious.
+• **Fever:** Often a sign that your immune system is fighting an infection. Usually viral or bacterial.
+• **Cough:** Can be from a cold, allergies, dry air, or irritation. If it lasts more than 3 weeks, see a doctor.
+• **Fatigue:** Lack of sleep, stress, poor diet, anemia, or an underlying condition.
+• **Stomach pain:** Indigestion, gas, constipation, food poisoning, or infection.
+• **Back pain:** Muscle strain, poor posture, or long hours of sitting.
+
+**What to do when you notice symptoms:**
+1. Rest and drink water — many mild symptoms improve on their own
+2. Monitor how long they last and whether they get better or worse
+3. Note any other symptoms that appear alongside
+4. See a doctor if symptoms persist more than a few days, get worse, or interfere with daily life
+
+⚠️ **Important:** This is not a diagnosis tool. Many different conditions share the same symptoms. Only a doctor can determine what's actually wrong after examining you.`,
+    `### 🔍 How to Talk to Your Doctor About Symptoms
+
+When you visit a doctor, describing your symptoms clearly helps them understand what might be going on. Here's what to prepare:
+
+**For each symptom, think about:**
+• **Where** does it hurt or feel unusual?
+• **When** did it start?
+• **How often** does it happen — all the time or on and off?
+• **How bad** is it on a scale of 1 to 10?
+• **What makes it better or worse?** (rest, movement, food, etc.)
+• **What other symptoms** appeared at the same time?
+
+**Red flags that need prompt medical attention:**
+• Severe or sudden pain
+• Difficulty breathing
+• High fever (over 103°F / 39.4°C) that doesn't come down
+• Blood in urine, stool, or vomit
+• Confusion or disorientation
+• Weakness or numbness on one side of the body
+
+⚠️ *This guide is for educational use only. If you're worried about your symptoms, please consult a healthcare professional who can examine you properly.*`
   ],
-  allergy: [
-    `### 🤧 Understanding Allergies\n\nAllergies occur when your immune system overreacts to harmless substances:\n\n* **Common Allergens:** Pollen, dust mites, pet dander, mold, certain foods (peanuts, shellfish, eggs, milk), insect stings, medications.\n* **Seasonal Allergies (Hay Fever):** Sneezing, runny nose, itchy eyes, congestion. Often triggered by pollen.\n* **Management:** Antihistamines, nasal sprays, staying indoors during high pollen, using air purifiers, washing bedding in hot water.\n* **Food Allergies:** Strict avoidance is key. Always read ingredient labels. Carry an epinephrine auto-injector if prescribed.\n\n*Severe allergic reactions (anaphylaxis) cause difficulty breathing, swelling of throat, rapid pulse, and require immediate emergency treatment.*`
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // MEDICINES & THEIR COMMON USES
+  // ──────────────────────────────────────────────────────────────────────────
+  medicines: [
+    `### 💊 Understanding Common Medicines — A General Overview
+
+Medicines help treat or prevent illness, but they should always be used responsibly. Here are some common types and what they are typically used for:
+
+**Pain relievers:**
+• **Acetaminophen (paracetamol):** For fever and mild to moderate pain like headaches, body aches.
+• **Ibuprofen:** For pain, inflammation, and fever. Also helpful for muscle aches and arthritis.
+• **Aspirin:** For pain, fever, and inflammation. Also used in low doses for heart health (only under doctor's advice).
+
+**Allergy medicines:**
+• **Antihistamines (cetirizine, loratadine):** For runny nose, sneezing, itching from allergies.
+
+**Cold and cough:**
+• **Decongestants:** Help clear a stuffy nose.
+• **Cough syrups:** Some suppress coughing, others help loosen mucus.
+
+**Digestive health:**
+• **Antacids:** For heartburn and acid indigestion.
+• **Probiotics:** Helpful bacteria that support gut health.
+
+**⚠️ Important safety rules:**
+• Never take medicines prescribed for someone else
+• Always follow the dose on the label or as your doctor advised
+• Check expiry dates before taking any medicine
+• Tell your doctor about ALL medicines you take (including herbal supplements)
+• If you miss a dose, do NOT double the next dose — just continue as usual
+• Some medicines interact with each other — ask your pharmacist or doctor`,
+    `### 💊 How to Take Medicines Safely
+
+Taking medicine the right way is just as important as taking the right medicine.
+
+**Before taking any medicine, ask yourself:**
+• Do I really need this? Some symptoms get better on their own.
+• Have I checked the label for the correct dose and frequency?
+• Do I know what side effects to watch for?
+• Could this interact with other medicines I'm taking?
+
+**Common mistakes to avoid:**
+• ❌ Taking antibiotics for a viral infection — antibiotics only work against bacteria
+• ❌ Crushing or breaking pills that are meant to be swallowed whole
+• ❌ Drinking alcohol while taking certain medicines
+• ❌ Stopping antibiotics early because you feel better — always finish the full course
+• ❌ Taking more than the recommended dose thinking it will work faster
+
+**A note on antibiotics:**
+Antibiotics treat bacterial infections, not viral ones (like colds or flu). Using them when they aren't needed leads to antibiotic resistance — which means they stop working when you really need them.
+
+⚠️ *This is educational information only. Always consult a doctor or pharmacist for advice specific to your health situation. Never start, stop, or change a medicine without speaking to a healthcare professional.*`
   ],
-  arthritis: [
-    `### 🦴 Understanding Arthritis\n\nArthritis involves inflammation of one or more joints:\n\n* **Osteoarthritis:** Wear-and-tear damage to joint cartilage. Common in knees, hips, hands. Risk increases with age and excess weight.\n* **Rheumatoid Arthritis:** Autoimmune condition where the immune system attacks joint linings. Causes pain, swelling, and deformities.\n* **Management:**\n  * Low-impact exercise (swimming, cycling, walking) keeps joints mobile.\n  * Weight management reduces stress on joints.\n  * Hot/cold therapy can relieve pain.\n  * Anti-inflammatory medications as prescribed.\n  * Physical therapy for strengthening supporting muscles.\n\n*See a rheumatologist for proper diagnosis and treatment.*`
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // VACCINATIONS
+  // ──────────────────────────────────────────────────────────────────────────
+  vaccinations: [
+    `### 💉 Vaccinations — Your Questions Answered
+
+**What are vaccines?**
+Vaccines train your immune system to recognize and fight specific germs without making you sick first. They are one of the most effective public health tools we have.
+
+**Why are vaccines important?**
+• They protect you from serious diseases
+• They protect people around you who can't get vaccinated (herd immunity)
+• They have saved millions of lives worldwide
+• They prevent outbreaks of once-common diseases
+
+**Vaccines recommended for most adults:**
+• **Flu shot:** Every year — the flu virus changes, so the vaccine is updated annually
+• **Tetanus/diphtheria/pertussis (Tdap):** Booster every 10 years
+• **COVID-19:** Updated shots as recommended
+• **Shingles:** Recommended for adults 50+
+• **Pneumococcal:** For adults 65+ or those with certain health conditions
+• **HPV:** For young adults to prevent certain cancers
+
+**Childhood vaccines include protection against:**
+Measles, mumps, rubella, polio, chickenpox, hepatitis B, whooping cough, diphtheria, tetanus, and more.
+
+**Common concerns answered:**
+• "Can vaccines give me the disease?" — No. Most vaccines contain killed or weakened germs that cannot cause the disease.
+• "Are there side effects?" — Mild ones (sore arm, low fever) are common. Serious reactions are extremely rare.
+• "Can I get multiple vaccines at once?" — Yes, combination vaccines are safe and reduce the number of shots needed.
+
+⚠️ *Talk to your doctor about which vaccines are right for you based on your age, health, and travel plans. Vaccine schedules vary by country.*`
   ],
-  thyroid: [
-    `### 🦋 Understanding Thyroid Disorders\n\nThe thyroid gland controls your metabolism:\n\n* **Hypothyroidism (Underactive):** Weight gain, fatigue, cold intolerance, dry skin, hair loss, depression. Treated with synthetic thyroid hormone.\n* **Hyperthyroidism (Overactive):** Weight loss, rapid heartbeat, anxiety, heat intolerance, trembling, bulging eyes. Treated with medications, radioactive iodine, or surgery.\n* **Dietary Support:** Iodine (seaweed, iodized salt), selenium (Brazil nuts, tuna), and zinc (pumpkin seeds, chickpeas) support thyroid function.\n\n*If you have persistent fatigue, weight changes, or temperature sensitivity, ask your doctor for a thyroid function test.*`
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // MEDICAL TESTS & REPORTS
+  // ──────────────────────────────────────────────────────────────────────────
+  medicaltests: [
+    `### 🩺 Common Medical Tests — A Simple Guide
+
+Medical tests help doctors understand what's happening inside your body. Here are some common ones and what they check:
+
+**Blood tests:**
+• **Complete Blood Count (CBC):** Measures red blood cells, white blood cells, and platelets. Helps detect anemia, infection, and other conditions.
+• **Blood sugar (glucose) test:** Checks your blood sugar level. Used to screen for diabetes.
+• **Lipid panel (cholesterol test):** Measures total cholesterol, LDL, HDL, and triglycerides. Assesses heart disease risk.
+• **Thyroid function test (TSH, T3, T4):** Checks how well your thyroid is working.
+• **Liver and kidney function tests:** Check how well these organs are working.
+
+**Urine tests:**
+• Check for infections, kidney problems, or diabetes.
+
+**Imaging tests:**
+• **X-ray:** Shows bones and some internal organs. Used for fractures and chest issues.
+• **Ultrasound:** Uses sound waves to create images. Safe during pregnancy. Checks organs like the liver, kidneys, and gallbladder.
+• **CT scan:** Detailed cross-section images of the body.
+• **MRI:** Uses magnets to create very detailed images of soft tissues.
+
+**Other common tests:**
+• **Blood pressure check:** Quick and painless — done at almost every doctor visit
+• **ECG (electrocardiogram):** Records your heart's electrical activity
+• **Pap smear:** Screens for cervical cancer
+• **Mammogram:** Screens for breast cancer
+• **Colonoscopy:** Screens for colon cancer
+
+💡 *Before any test, ask your doctor: Do I need to prepare (fasting, etc.)? What will this test tell us? When will I get the results?*`,
+    `### 🩺 Understanding Your Medical Reports
+
+Getting test results can feel overwhelming. Here's how to make sense of them:
+
+**Key things to look for on lab reports:**
+• **Your result:** The value from your test
+• **Reference range:** The normal range for that test (it may vary by lab)
+• **Flag (H/L):** High (above normal) or Low (below normal)
+
+**Important to remember:**
+• A result outside normal range does NOT automatically mean something is wrong
+• Reference ranges are guidelines — one slightly abnormal value may not be significant
+• Doctors look at the whole picture — your results, symptoms, history, and physical exam
+• Never try to interpret results on your own — always discuss them with your doctor
+
+**Examples of what simple results might suggest:**
+• **High blood sugar:** May indicate diabetes or prediabetes — your doctor will confirm with follow-up tests
+• **High cholesterol:** May increase heart disease risk — lifestyle changes and sometimes medication can help
+• **Low hemoglobin (anemia):** May be from iron deficiency, blood loss, or other causes
+• **High white blood cells:** May signal your body is fighting an infection
+
+⚠️ *This is for educational purposes. Only your doctor can properly interpret your test results in the context of your overall health. Always discuss your reports with them.*`
   ],
-  kidney: [
-    `### 🫘 Kidney Health\n\nYour kidneys filter waste from your blood and regulate fluid balance:\n\n* **Kidney Stones:** Hard mineral deposits that form in kidneys. Symptoms include severe flank pain, blood in urine, nausea. Prevention: drink plenty of water, limit sodium and oxalate-rich foods (spinach, beets, nuts).\n* **UTI (Urinary Tract Infection):** Burning sensation during urination, frequent urge, cloudy urine. Treated with antibiotics. Drink cranberry juice (unsweetened) and water to help prevent.\n* **Chronic Kidney Disease:** Often caused by diabetes or high blood pressure. Early stages have no symptoms. Regular check-ups with blood and urine tests are important if you're at risk.`,
-    `### 🫘 Preventing Kidney Stones\n\nKidney stones are extremely painful but often preventable:\n\n* **Stay Hydrated:** Drink enough water to produce 2–2.5 liters of urine daily. This dilutes stone-forming substances.\n* **Limit Sodium:** High sodium increases calcium in urine, which can form stones.\n* **Reduce Oxalate-Rich Foods:** Spinach, rhubarb, beets, nuts, and chocolate can contribute to calcium oxalate stones.\n* **Get Enough Calcium:** Contrary to popular belief, adequate dietary calcium (from food, not supplements) actually reduces stone risk by binding to oxalate in the gut.\n* **Limit Animal Protein:** High intake of red meat and shellfish can increase uric acid stones.`
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // NUTRITION & HEALTHY DIETS
+  // ──────────────────────────────────────────────────────────────────────────
+  nutrition: [
+    `### 🥗 Healthy Eating Made Simple
+
+Good nutrition doesn't have to be complicated. Here's a straightforward way to think about food:
+
+**Build a balanced plate:**
+• **½ plate:** Vegetables and fruits — go for a variety of colors
+• **¼ plate:** Whole grains — brown rice, whole wheat, oats, millets, quinoa
+• **¼ plate:** Protein — dal, beans, chickpeas, fish, eggs, chicken, tofu, paneer
+
+**Small changes that add up:**
+• Drink water instead of sugary sodas or packaged juices
+• Snack on nuts, fruit, or yogurt instead of chips and biscuits
+• Cook at home more often — you control what goes into your food
+• Eat mindfully — pay attention to your food, eat slowly, stop when you're full
+• Include fiber — oats, dal, vegetables, and fruits help digestion and keep you full
+
+**What to limit:**
+• Fried foods and packaged snacks (chips, namkeen)
+• Sugary drinks and sweets
+• Excess salt — most of it comes from packaged foods
+• Refined grains — white rice, white bread, maida
+
+💡 *The best diet is one you can stick with consistently. Small, permanent changes beat big temporary ones.*`,
+    `### 🥗 Understanding Food Groups
+
+Food gives your body different types of fuel. Here's what each group contributes:
+
+**Carbohydrates — Your body's main energy source**
+• Choose: Brown rice, whole wheat, oats, millets, sweet potatoes, fruits
+• Limit: White rice, white bread, sugary foods, maida
+
+**Proteins — For building and repairing body tissues**
+• Sources: Dal, chickpeas, soy, eggs, fish, chicken, milk, yogurt, paneer
+• Try to include some protein in every meal
+
+**Fats — Essential for brain health and vitamin absorption**
+• Healthy sources: Nuts, seeds, avocados, olive oil, ghee (in moderation)
+• Limit: Fried foods, butter, cream, processed snacks
+
+**Vitamins and minerals — Support every function in your body**
+• Found in: Vegetables, fruits, leafy greens, dairy
+• Different colors = different nutrients. "Eat a rainbow" every day
+
+**Fiber — Helps digestion and keeps you full**
+• Sources: Whole grains, dal, vegetables, fruits with skin, nuts and seeds
+
+💡 *You don't need to count every nutrient. Just aim for variety and balance across your meals.*`,
   ],
-  backpain: [
-    `### 💪 Managing Back Pain\n\nBack pain is incredibly common — about 80% of adults experience it at some point:\n\n* **Common Causes:** Muscle strain, poor posture, herniated discs, arthritis, osteoporosis, or sedentary lifestyle.\n* **Self-Care for Acute Pain:**\n  * Stay active — bed rest for more than 2 days can weaken muscles.\n  * Apply ice for the first 48 hours, then heat.\n  * Over-the-counter pain relievers (ibuprofen, acetaminophen).\n  * Gentle stretching and walking.\n* **Prevention:** Maintain good posture, strengthen core muscles, lift with your legs not your back, sleep on a supportive mattress.\n\n*See a doctor if pain persists more than 2 weeks, radiates down your legs, or is accompanied by fever or numbness.*`
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // EXERCISE & FITNESS
+  // ──────────────────────────────────────────────────────────────────────────
+  exercise: [
+    `### 🏃‍♂️ Physical Activity — A Practical Guide
+
+**How much activity do you need?**
+Aim for at least **150 minutes per week** of moderate activity — that's just 20–25 minutes per day. Moderate activity means you're breathing harder but can still hold a conversation.
+
+**Examples of moderate activity:**
+• Brisk walking
+• Cycling at a steady pace
+• Swimming
+• Dancing
+• Gardening or housework
+• Playing with children
+
+**Don't forget strength:**
+On 2 or more days per week, do activities that strengthen your muscles:
+• Push-ups, squats, lunges (no equipment needed)
+• Lifting weights or using resistance bands
+• Yoga or pilates
+
+**Break up sitting time:**
+Sitting for long hours is harmful even if you exercise. Stand up and stretch for 2–3 minutes every hour. Walk while on the phone.
+
+**Tips to stay consistent:**
+• Start small — even 5–10 minutes a day is a great start
+• Pick activities you genuinely enjoy
+• Exercise with a friend — it helps keep you accountable
+• Track your progress to stay motivated`,
+    `### 🏃‍♂️ Getting Started with Exercise — Beginner's Guide
+
+If you haven't exercised in a while, here's how to start safely:
+
+**Week 1–2: Just move**
+• Walk for 10–15 minutes daily at a comfortable pace
+• Do gentle stretching in the morning
+• Take the stairs instead of the elevator
+
+**Week 3–4: Build up**
+• Walk for 20 minutes, picking up the pace slightly
+• Add simple bodyweight exercises: 5–10 squats, wall push-ups
+• Try a beginner yoga video online
+
+**Week 5+: Find your rhythm**
+• Aim for 30 minutes most days
+• Mix walking, strength exercises, and stretching
+• Try a new activity — cycling, swimming, dancing
+
+**Important safety reminders:**
+• Warm up for 5 minutes before and cool down after
+• Drink water before, during, and after exercise
+• Wear comfortable shoes and clothes
+• Stop if you feel sharp pain or dizziness
+• Check with your doctor before starting if you have any health conditions`,
   ],
-  skincare: [
-    `### 🧴 Skin Health Guide\n\nYour skin is your body's largest organ. Keep it healthy:\n\n* **Sun Protection:** SPF 30+ sunscreen daily, even on cloudy days. Reapply every 2 hours when outdoors. Sun damage is the #1 cause of premature aging and skin cancer.\n* **Cleansing:** Wash your face twice daily with a gentle cleanser. Avoid harsh soaps that strip natural oils.\n* **Moisturize:** Apply moisturizer while skin is still damp to lock in hydration.\n* **Common Conditions:**\n  * **Acne:** Keep skin clean, use non-comedogenic products, avoid touching your face.\n  * **Eczema:** Moisturize regularly, avoid triggers, use mild fragrance-free products.\n  * **Dry Skin:** Humidifier, lukewarm showers, moisturize immediately after bathing.`,
-    `### 🧴 Acne Management\n\nAcne affects people of all ages. Here's how to manage it:\n\n* **Gentle Cleansing:** Wash face twice daily with a mild cleanser. Don't scrub aggressively — it irritates skin.\n* **Non-Comedogenic Products:** Look for "oil-free" and "non-comedogenic" on labels — these won't clog pores.\n* **Over-the-Counter Treatments:** Benzoyl peroxide (kills bacteria), salicylic acid (unclogs pores), niacinamide (reduces inflammation).\n* **Don't Pick or Pop:** This can worsen inflammation and cause scarring.\n* **See a Dermatologist:** For persistent or severe acne, prescription treatments (retinoids, antibiotics, or isotretinoin) may be needed.`
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // SLEEP
+  // ──────────────────────────────────────────────────────────────────────────
+  sleep: [
+    `### 😴 Better Sleep — Simple Habits That Work
+
+Most adults need 7–9 hours of sleep each night. Quality matters just as much as quantity.
+
+**Create a relaxing bedtime routine:**
+• Go to bed and wake up at the same time every day — even on weekends
+• Turn off screens (phone, TV, tablet) at least 30 minutes before bed
+• Read a book, listen to calm music, or take a warm bath instead
+• Keep your bedroom dark, quiet, and cool
+
+**What to avoid before bed:**
+• Heavy meals within 2–3 hours of sleeping
+• Caffeine (tea, coffee, cola) after 4 PM
+• Alcohol close to bedtime — it may help you fall asleep but disrupts deep sleep
+• Intense exercise in the evening
+
+**If you can't sleep:**
+• Don't lie in bed worrying about it — get up, read in dim light, and return to bed when you feel sleepy
+• Try deep breathing: inhale for 4 counts, hold for 4, exhale for 4
+• Avoid looking at the clock — it creates anxiety`,
+    `### 😴 Why Sleep Matters
+
+Sleep is not just rest — it's when your body does important repair work:
+
+**What happens while you sleep:**
+• Your brain processes memories and emotions
+• Muscles and tissues repair themselves
+• Your immune system strengthens
+• Hormones that control appetite and growth are released
+
+**Signs you're not getting enough quality sleep:**
+• Feeling tired even after a full night in bed
+• Difficulty concentrating or remembering things
+• Feeling irritable or moody
+• Craving sugary or high-calorie foods
+• Falling asleep easily during the day
+
+**Common sleep disruptors:**
+• Stress and worry
+• Irregular sleep schedule
+• Screen time before bed
+• Too much caffeine
+• An uncomfortable mattress or room that's too bright/noisy
+• Certain medical conditions (sleep apnea, thyroid issues)
+
+⚠️ *If lack of sleep is affecting your daily life for more than a few weeks, consider speaking with a doctor to rule out underlying conditions.*`
   ],
-  dental: [
-    `### 🦷 Dental & Oral Health\n\nOral health is connected to overall health:\n\n* **Brushing:** Brush twice daily for 2 minutes with fluoride toothpaste. Use a soft-bristled brush.\n* **Flossing:** Floss once daily — it reaches areas your toothbrush can't.\n* **Diet Matters:** Limit sugary foods and drinks. Sugar feeds bacteria that cause cavities.\n* **Regular Check-ups:** Visit your dentist every 6 months for cleanings and exams.\n* **Signs of Trouble:** Bleeding gums, persistent bad breath, tooth sensitivity, loose teeth — see your dentist promptly.\n\n*Gum disease has been linked to heart disease, diabetes complications, and pregnancy complications.*`
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // HYDRATION
+  // ──────────────────────────────────────────────────────────────────────────
+  hydration: [
+    `### 💧 Hydration — A Simple Guide
+
+**How much water do you need?**
+A general guideline is about 8 cups (2 liters) per day for women and 10 cups (2.5 liters) for men. But needs vary based on activity, climate, and health.
+
+**A quick way to check if you're hydrated:**
+Look at your urine color:
+• Pale yellow or straw-colored = well hydrated ✅
+• Dark yellow or amber = drink more water 🟡
+• Very dark or brown = severely dehydrated — drink water slowly 🟤
+
+**Easy ways to drink more water:**
+• Keep a water bottle on your desk or in your bag
+• Add lemon, cucumber, mint, or orange slices for flavor
+• Drink a glass of water with every meal
+• Set a reminder on your phone
+• Eat water-rich foods: watermelon, cucumber, oranges, tomatoes, soups
+
+**When you need extra water:**
+• During and after exercise
+• In hot or humid weather
+• If you have a fever, diarrhea, or vomiting
+• During pregnancy and breastfeeding`,
+    `### 💧 Signs You Might Be Dehydrated
+
+Dehydration happens when your body loses more water than you take in. Mild dehydration is common and easy to fix.
+
+**Mild to moderate dehydration:**
+• Thirst and dry mouth
+• Headache
+• Feeling tired or dizzy
+• Dark yellow urine
+• Dry skin
+• Constipation
+
+**Severe dehydration (needs medical help):**
+• Extreme thirst
+• No urination for 8+ hours
+• Rapid heartbeat
+• Confusion or irritability
+• Sunken eyes
+• Feeling faint
+
+**Who is at higher risk?**
+• Infants and young children
+• Older adults
+• People with chronic illnesses
+• Athletes
+• Anyone with fever, vomiting, or diarrhea
+
+💡 *The simplest tip: if you feel thirsty, you're already mildly dehydrated. Drink water regularly throughout the day, not just when you feel thirsty.*`
   ],
-  digestion: [
-    `### 🫃 Digestive Health\n\nGood digestion is key to overall wellness:\n\n* **Fiber-Rich Diet:** Soluble fiber (oats, apples, beans) and insoluble fiber (vegetables, whole grains) keep things moving.\n* **Probiotics:** Yogurt, kefir, kimchi, sauerkraut, and kombucha contain beneficial bacteria that support gut health.\n* **Stay Hydrated:** Water helps break down food and prevents constipation.\n* **Eat Mindfully:** Chew food thoroughly, eat slowly, and avoid overeating.\n* **Common Issues:**\n  * **Constipation:** Increase fiber, water, and physical activity.\n  * **Acid Reflux:** Avoid trigger foods (spicy, fatty, citrus), eat smaller meals, don't lie down after eating.\n  * **IBS (Irritable Bowel Syndrome):** Common condition causing cramping, bloating, and changes in bowel habits. Management includes diet changes, stress reduction, and medication.`,
-    `### 🫃 Managing Acid Reflux\n\nAcid reflux (GERD) occurs when stomach acid flows back into the esophagus:\n\n* **Common Symptoms:** Heartburn (burning chest pain), regurgitation, difficulty swallowing, chronic cough.\n* **Dietary Changes:** Avoid spicy foods, citrus, tomatoes, chocolate, caffeine, alcohol, and fatty foods.\n* **Lifestyle Adjustments:**\n  * Eat smaller, more frequent meals rather than large meals.\n  * Don't lie down for 2–3 hours after eating.\n  * Elevate the head of your bed by 6–8 inches.\n  * Maintain a healthy weight.\n* **Over-the-Counter Help:** Antacids, H2 blockers (famotidine), or proton pump inhibitors (omeprazole) can provide relief.\n\n*If symptoms persist despite lifestyle changes, see a doctor for evaluation.*`
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // MENTAL HEALTH
+  // ──────────────────────────────────────────────────────────────────────────
+  stress: [
+    `### 🧘‍♀️ Understanding Stress and Mental Wellness
+
+**What is stress?**
+Stress is your body's natural response to challenges. A little stress can help you focus and perform. But chronic stress — feeling overwhelmed for weeks or months — takes a toll on your health.
+
+**Signs of too much stress:**
+• Trouble sleeping
+• Irritability or mood swings
+• Difficulty concentrating
+• Headaches or muscle tension
+• Changes in appetite
+• Feeling tired all the time
+• Withdrawing from people
+
+**Practical ways to manage stress:**
+• **Deep breathing:** Inhale for 4 counts, hold for 4, exhale for 4. Do this 5 times.
+• **Move your body:** A 15-minute walk can clear your mind
+• **Talk to someone:** Share your feelings with a trusted friend or family member
+• **Limit screen time:** Constant news and social media can increase anxiety
+• **Do something you enjoy:** A hobby, music, cooking, or spending time in nature
+• **Write it down:** Journaling helps process emotions
+
+💡 *Taking care of your mental health is just as important as physical health. Small daily habits can make a big difference.*`,
+    `### 🧘‍♀️ Building Mental Wellness Habits
+
+**Daily habits that support mental health:**
+
+**Morning:**
+• Start with gratitude — think of 1–2 things you're thankful for
+• Stretch or take a few deep breaths before checking your phone
+• Have a nourishing breakfast
+
+**During the day:**
+• Take short breaks every 1–2 hours — stand up, stretch, step outside
+• Eat regular meals — low blood sugar can affect mood
+• Stay hydrated — dehydration can cause fatigue and irritability
+• Set boundaries — it's okay to say no to extra demands
+
+**Evening:**
+• Wind down without screens for 30 minutes before bed
+• Reflect on one good thing that happened today
+• Prepare for tomorrow to reduce morning stress
+
+**When to seek professional help:**
+It's normal to feel sad or anxious sometimes. But if these feelings:
+• Last for more than 2 weeks
+• Interfere with work, relationships, or daily activities
+• Make you feel hopeless or overwhelmed
+
+…then talking to a counselor, therapist, or doctor is a sign of strength, not weakness.
+
+⚠️ *This is educational information. If you're having thoughts of harming yourself, please contact a crisis helpline or emergency services immediately.*`,
   ],
-  immunity: [
-    `### 🛡️ Supporting Your Immune System\n\nA strong immune system helps you fight off infections:\n\n* **Nutrition for Immunity:**\n  * **Vitamin C:** Citrus fruits, bell peppers, strawberries, broccoli.\n  * **Vitamin D:** Sunlight, fatty fish, fortified milk. Many people are deficient.\n  * **Zinc:** Pumpkin seeds, chickpeas, cashews, meat.\n  * **Antioxidants:** Berries, dark leafy greens, nuts, green tea.\n* **Lifestyle Factors:**\n  * **Quality Sleep:** 7–9 hours — your immune system ramps up during sleep.\n  * **Regular Exercise:** Moderate activity boosts immune function.\n  * **Stress Management:** Chronic stress suppresses immunity.\n  * **Hydration:** Supports all bodily functions including immune response.\n\n*There's no magic pill for immunity — it's built through consistent healthy habits.*`
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // FIRST AID
+  // ──────────────────────────────────────────────────────────────────────────
+  firstaid: [
+    `### 🩹 Basic First Aid — What to Do in Common Situations
+
+**Minor burns (from heat):**
+• Hold the burned area under cool (not cold) running water for 10–15 minutes
+• Cover loosely with a clean, dry cloth or sterile bandage
+• Do NOT apply butter, oil, ice, or toothpaste — these can make things worse
+• For serious burns (large, deep, or blistering), seek medical help
+
+**Cuts and scrapes:**
+• Wash gently with clean water and mild soap
+• Apply gentle pressure with a clean cloth to stop bleeding
+• Apply antibiotic ointment if available
+• Cover with a clean bandage
+• Change the bandage daily
+
+**Nosebleeds:**
+• Sit upright and lean slightly forward (not backward)
+• Pinch the soft part of your nose just below the bony bridge
+• Hold for 10 minutes without checking
+• Breathe through your mouth
+• If bleeding continues after 20 minutes, see a doctor
+
+**Sprains (twisted ankle, wrist):**
+• Follow R.I.C.E.: Rest, Ice (15 minutes on, 15 off), Compression (elastic bandage), Elevation (above heart)
+• Avoid walking on the injured area for 24–48 hours
+
+⚠️ *For serious injuries — deep wounds, large burns, head injuries, severe bleeding, or suspected fractures — call emergency services immediately.*`,
+    `### 🩹 Building a Home First Aid Kit
+
+Keep these items in a box that's easy to find:
+
+**Basic supplies:**
+• Adhesive bandages (various sizes) — for small cuts and blisters
+• Sterile gauze pads and medical tape — for larger wounds
+• Antiseptic wipes or solution — to clean wounds
+• Antibiotic ointment — to prevent infection
+• Tweezers — to remove splinters or debris
+• Scissors — for cutting tape or cloth
+• Elastic bandage (ACE wrap) — for sprains
+• Instant cold pack — activate by squeezing
+
+**Medicines to include:**
+• Pain reliever (acetaminophen or ibuprofen)
+• Antihistamine (for allergies)
+• Antacid (for heartburn)
+• Oral rehydration salts — for diarrhea
+
+**Other useful items:**
+• Thermometer
+• Disposable gloves
+• Safety pins
+• Flashlight with extra batteries
+• Emergency contact numbers
+
+💡 *Check your kit every 6 months — replace expired medicines and used supplies.*`
   ],
-  weight: [
-    `### ⚖️ Healthy Weight Management\n\nSustainable weight management is about lifestyle, not quick fixes:\n\n* **Calorie Balance:** Weight changes come down to calories in vs. calories out. A deficit of 300–500 calories per day leads to gradual, sustainable weight loss.\n* **Protein & Fiber:** These increase satiety and reduce overall calorie intake. Include protein and vegetables at every meal.\n* **Portion Awareness:** Use smaller plates, measure portions, and avoid eating directly from packages.\n* **Physical Activity:** Combine cardio (calorie burning) with strength training (muscle building — muscle burns more calories at rest).\n* **Sleep & Stress:** Poor sleep and high stress increase cortisol, which promotes fat storage, especially around the belly.\n\n*Aim to lose 0.5–1 kg (1–2 lbs) per week. Faster weight loss is often unsustainable and can be unhealthy.*`,
-    `### ⚖️ Myths About Weight Loss\n\nCommon misconceptions that can derail your progress:\n\n* **Myth: "Carbs make you fat."** Truth: Excess calories from ANY source cause weight gain. Complex carbs are essential for energy and health.\n* **Myth: "You need to starve yourself."** Truth: Severe calorie restriction slows metabolism and leads to muscle loss. Eat enough to fuel your body.\n* **Myth: "Detox teas cleanse your system."** Truth: Your liver and kidneys naturally detox your body. No tea or cleanse can improve on this.\n* **Myth: "Spot reduction works."** Truth: You can't target fat loss from specific areas. Overall fat loss through diet and exercise is the only way.\n* **Myth: "Supplements replace healthy eating."** Truth: Whole foods provide complex nutrients that supplements can't replicate.`
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // WOMEN'S HEALTH
+  // ──────────────────────────────────────────────────────────────────────────
+  womenshealth: [
+    `### 👩 Women's Health — Key Topics
+
+**Menstrual health:**
+• Regular periods (every 21–35 days) are a sign of overall health
+• Common symptoms before periods: bloating, mood changes, cramps — light exercise, heat packs, and rest can help
+• If periods are very painful, irregular, or heavy, see a gynecologist
+
+**Pregnancy care:**
+• Take folic acid supplements before and during pregnancy
+• Eat a balanced diet with iron-rich foods (leafy greens, beans, lean meat)
+• Stay active — walking and prenatal yoga are generally safe
+• Attend all scheduled prenatal check-ups
+• Avoid alcohol, smoking, and certain foods (raw fish, unpasteurized dairy)
+
+**Breast health:**
+• Get familiar with how your breasts normally look and feel
+• Report any lumps, skin changes, or discharge to a doctor
+• Mammograms are recommended starting at age 40–45 (or earlier if high risk)
+
+**Common health concerns:**
+• **UTIs:** Frequent urge to urinate, burning sensation. Drink plenty of water, see a doctor for treatment.
+• **PCOS (Polycystic Ovary Syndrome):** Irregular periods, excess hair growth, weight gain. Manage with diet, exercise, and medical guidance.
+• **Osteoporosis:** Bone thinning after menopause. Ensure adequate calcium and vitamin D, do weight-bearing exercise.
+
+⚠️ *Every woman's body is different. Regular check-ups with a gynecologist are important at every stage of life.*`,
+    `### 👩 Common Women's Health Screenings
+
+**Recommended screenings and when to start:**
+
+• **Pap smear (cervical cancer screening):** Starting at age 21–25, every 3–5 years depending on results
+• **Mammogram (breast cancer screening):** Starting at age 40–45, every 1–2 years
+• **Bone density test (osteoporosis):** Starting at age 65, or earlier if high risk
+• **Blood pressure check:** At every doctor visit
+• **Cholesterol test:** Starting at age 20, every 4–6 years
+• **Blood sugar test:** Starting at age 35–45, every 3 years
+• **Thyroid test:** If symptoms suggest a thyroid issue
+
+**When to see a gynecologist:**
+• For annual well-woman exams
+• If you notice unusual bleeding or discharge
+• For contraception advice
+• Before planning a pregnancy
+• For persistent pelvic pain
+• For menopausal symptom management
+
+⚠️ *These are general guidelines. Your individual screening schedule may differ based on your health history and risk factors. Discuss with your doctor.*`
   ],
-  pregnancy: [
-    `### 🤰 Pregnancy Health\n\nProper care during pregnancy is vital for both mother and baby:\n\n* **Prenatal Care:** Regular check-ups with your obstetrician. Take prenatal vitamins (especially folic acid) before and during pregnancy.\n* **Nutrition:** Eat a balanced diet rich in iron (leafy greens, lean meat), calcium (dairy, fortified plant milk), and protein. Stay hydrated.\n* **Safe Exercise:** Walking, swimming, and prenatal yoga are generally safe. Consult your doctor before starting any exercise.\n* **What to Avoid:** Alcohol, tobacco, recreational drugs, raw/undercooked foods, high-mercury fish (shark, swordfish), and excessive caffeine.\n* **Warning Signs:** Severe abdominal pain, heavy bleeding, severe headache, vision changes, sudden swelling — seek immediate medical attention.`
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // CHILD HEALTH
+  // ──────────────────────────────────────────────────────────────────────────
+  childhealth: [
+    `### 👶 Child Health — A Parent's Guide
+
+**Nutrition for growing children:**
+• Breast milk is best for the first 6 months (exclusive breastfeeding recommended)
+• Introduce solid foods around 6 months — start with mashed fruits, vegetables, and porridge
+• Include protein (dal, eggs, milk), carbs (rice, roti), and healthy fats (ghee, nuts in paste form)
+• Limit sugary snacks, packaged juices, and fried foods
+• Encourage water as the main drink
+
+**Vaccinations:**
+• Follow the vaccination schedule recommended by your country's health authorities
+• Common vaccines protect against: measles, polio, diphtheria, tetanus, whooping cough, hepatitis B, TB, and more
+• Keep a vaccination record card
+
+**Common childhood illnesses:**
+• **Colds and cough:** Most are viral and resolve on their own. Keep the child hydrated and comfortable.
+• **Fever:** Monitor temperature. Keep the child hydrated. Use acetaminophen or ibuprofen as per doctor's advice for high fever.
+• **Diaper rash:** Change diapers frequently, keep the area clean and dry, use barrier cream
+
+**When to see a doctor for your child:**
+• Fever lasting more than 3 days
+• Difficulty breathing
+• Not drinking fluids or signs of dehydration
+• Persistent vomiting or diarrhea
+• Unusual rash or lethargy
+
+⚠️ *This is general guidance. Always consult a pediatrician for concerns about your child's health.*`,
+    `### 👶 Keeping Children Healthy
+
+**Sleep needs by age:**
+• Newborns (0–3 months): 14–17 hours
+• Infants (4–11 months): 12–15 hours
+• Toddlers (1–2 years): 11–14 hours
+• Preschoolers (3–5 years): 10–13 hours
+• School-age (6–13 years): 9–11 hours
+
+**Physical activity for children:**
+• Children need at least 60 minutes of active play daily
+• Running, jumping, climbing, cycling, swimming — anything that gets them moving
+• Limit screen time (TV, phone, tablet) to 1–2 hours per day max
+
+**Building healthy habits early:**
+• Set regular meal and sleep times
+• Be a role model — children copy what they see
+• Make healthy foods fun — cut fruits and vegetables into shapes
+• Praise effort, not just results
+• Talk openly about feelings and emotions
+
+**Safety tips:**
+• Use car seats and seat belts correctly
+• Keep medicines and cleaning products out of reach
+• Supervise around water (bath tubs, pools, buckets)
+• Teach basic hygiene — hand washing before meals
+
+⚠️ *Every child develops differently. If you have concerns about your child's growth, development, or behavior, speak with a pediatrician.*`
   ],
-  bone: [
-    `### 🦴 Bone Health\n\nStrong bones are built throughout life, but it's never too late to improve them:\n\n* **Calcium:** Dairy products, fortified plant milks, leafy greens, almonds, and sardines. Adults need about 1,000 mg daily (1,200 mg for women over 50).\n* **Vitamin D:** Essential for calcium absorption. Sunlight, fatty fish, egg yolks, and fortified foods. Many people benefit from supplementation.\n* **Weight-Bearing Exercise:** Walking, jogging, dancing, and strength training stimulate bone formation.\n* **Osteoporosis Prevention:** Build strong bones early in life, maintain adequate calcium and vitamin D, exercise regularly, avoid smoking and excessive alcohol.\n\n*Bone density peaks around age 30, then gradually declines. It's never too early or too late to support your bone health.*`
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // ELDERLY CARE
+  // ──────────────────────────────────────────────────────────────────────────
+  elderlycare: [
+    `### 👴👵 Elderly Care — Supporting Health in Later Years
+
+**Nutrition for older adults:**
+• Protein is extra important — helps maintain muscle mass. Include dal, eggs, fish, milk, paneer
+• Calcium and vitamin D for bone health — milk, yogurt, leafy greens, sunlight
+• Fiber for digestion — whole grains, fruits, vegetables
+• Stay hydrated — thirst sensation decreases with age, so drink water regularly even if not thirsty
+• Smaller, more frequent meals can help if appetite is low
+
+**Staying active:**
+• Gentle exercise like walking, stretching, or chair exercises helps maintain mobility
+• Balance exercises reduce fall risk — standing on one foot, heel-to-toe walking
+• Strength training with light weights or resistance bands preserves muscle
+• Always warm up and cool down gently
+
+**Common health considerations:**
+• **Blood pressure:** Check regularly — high BP often has no symptoms
+• **Bone health:** Risk of osteoporosis increases with age. Falls can be serious.
+• **Vision and hearing:** Regular check-ups help catch age-related changes early
+• **Medication management:** Keep a list of all medicines and doses. Use a pill organizer if needed.
+• **Mental health:** Social connection matters — loneliness affects physical health too
+
+**Fall prevention:**
+• Remove loose rugs and clutter from walkways
+• Install grab bars in the bathroom
+• Ensure good lighting, especially at night
+• Wear non-slip footwear
+• Get vision checked regularly
+
+⚠️ *Elderly care needs vary widely. It's best to have regular check-ups and discuss any concerns with a doctor who knows the person's full health history.*`,
+    `### 👴👵 Common Health Screenings for Older Adults
+
+As we age, certain screenings become more important:
+
+**Recommended for most people 65+:**
+• **Blood pressure:** At every check-up
+• **Cholesterol:** Every 1–5 years
+• **Blood sugar:** Every 3 years for diabetes
+• **Bone density:** To check for osteoporosis
+• **Vision and hearing:** Yearly
+• **Colon cancer screening:** Colonoscopy every 10 years (or as advised)
+• **Mammogram (women):** Every 1–2 years up to age 75
+• **Prostate cancer discussion (men):** Talk with your doctor
+• **Vaccinations:** Flu shot yearly, pneumonia vaccine, shingles vaccine, COVID-19 boosters
+• **Cognitive screening:** If memory concerns arise
+
+**Medication safety for older adults:**
+• Keep an updated list of all medicines, supplements, and vitamins
+• Review medicines with your doctor at every visit — some may no longer be needed
+• Use one pharmacy so they can check for interactions
+• Don't stop or change medicines without talking to the doctor first
+
+💡 *Regular preventive care helps maintain independence and quality of life in later years.*`
   ],
-  anemia: [
-    `### 🩸 Understanding Anemia\n\nAnemia occurs when you don't have enough healthy red blood cells to carry oxygen:\n\n* **Common Symptoms:** Fatigue, weakness, pale skin, shortness of breath, dizziness, cold hands and feet, brittle nails.\n* **Iron Deficiency Anemia (most common):** Causes include blood loss, poor diet, or inability to absorb iron.\n  * **Iron-Rich Foods:** Red meat, spinach, lentils, beans, fortified cereals, pumpkin seeds.\n  * **Boost Absorption:** Pair iron-rich foods with vitamin C (citrus fruits, tomatoes, bell peppers).\n* **Vitamin B12 Deficiency:** Can cause anemia and nerve problems. Found in meat, fish, eggs, dairy. Vegans may need supplements.\n* **Folate Deficiency:** Leafy greens, legumes, and fortified grains are good sources.\n\n*See a doctor for proper diagnosis — different types of anemia require different treatments.*`
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // LIFESTYLE DISORDERS
+  // ──────────────────────────────────────────────────────────────────────────
+  disease: [
+    `### 🧬 Understanding Lifestyle Disorders
+
+Lifestyle disorders are health conditions influenced by how we live — our diet, activity level, habits, and environment. The good news? Many can be prevented or managed with healthy changes.
+
+**Common lifestyle disorders:**
+• **Type 2 diabetes** — High blood sugar from insulin resistance
+• **High blood pressure (hypertension)** — Often from diet, stress, and inactivity
+• **High cholesterol** — Can clog arteries over time
+• **Heart disease** — The leading cause of death globally
+• **Obesity** — Excess body weight that affects overall health
+• **Fatty liver disease** — Fat buildup in the liver from diet and alcohol
+
+**Root causes:**
+• Unhealthy diet (too much sugar, salt, and processed food)
+• Physical inactivity
+• Smoking or tobacco use
+• Excessive alcohol
+• Chronic stress
+• Poor sleep
+
+**Small steps that help prevent lifestyle disorders:**
+• Walk for 30 minutes daily
+• Eat more vegetables and whole foods, less packaged food
+• Drink water instead of sugary drinks
+• Get 7–8 hours of sleep
+• Manage stress with breathing, hobbies, or talking to someone
+• Avoid tobacco and limit alcohol
+• Get regular health check-ups
+
+💡 *It's never too late to make healthy changes. Even small improvements can lower your risk significantly.*`
   ],
-  dengue: [
-    `### 🦟 Understanding Dengue Fever\n\nDengue is a mosquito-borne viral infection common in tropical regions:\n\n* **Symptoms:** High fever (104°F/40°C), severe headache, pain behind the eyes, joint and muscle pain, rash, mild bleeding (nose or gums).\n* **Warning Signs of Severe Dengue:** Severe abdominal pain, persistent vomiting, rapid breathing, bleeding gums, fatigue, restlessness.\n* **What to Do:**\n  * Rest and stay hydrated — drink plenty of fluids.\n  * Use acetaminophen (paracetamol) for fever — avoid ibuprofen and aspirin as they increase bleeding risk.\n  * Monitor for warning signs — if they appear, go to the hospital immediately.\n* **Prevention:** Use mosquito repellent, wear long sleeves/pants, use mosquito nets, eliminate standing water.`
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // HEALTH TIPS & PREVENTION
+  // ──────────────────────────────────────────────────────────────────────────
+  prevention: [
+    `### 🛡️ Preventive Healthcare — Stay Ahead of Illness
+
+**Preventive care means taking action before you get sick.** It's one of the best investments you can make in your health.
+
+**Key prevention strategies:**
+
+**1. Regular check-ups**
+Visit your doctor once a year even if you feel fine. Many serious conditions (high BP, diabetes, high cholesterol) have no early symptoms.
+
+**2. Vaccinations**
+Stay up to date with recommended vaccines. They protect you and those around you.
+
+**3. Healthy diet**
+Eat a variety of whole foods. Limit processed foods, sugar, and salt.
+
+**4. Physical activity**
+Aim for 30 minutes of moderate activity most days.
+
+**5. Don't smoke**
+Smoking is linked to lung cancer, heart disease, stroke, and many other conditions. Quitting at any age improves health.
+
+**6. Limit alcohol**
+If you drink, do so in moderation — no more than 1 drink per day for women, 2 for men.
+
+**7. Sun protection**
+Use SPF 30+ sunscreen, wear a hat, and avoid peak sun hours.
+
+**8. Mental health care**
+Manage stress, stay connected, and seek help when needed.
+
+💡 *Prevention isn't just about avoiding disease — it's about feeling your best every day.*`,
+    `### 🛡️ Simple Daily Habits for Long-Term Health
+
+**Morning:**
+• Drink a glass of water after waking up
+• Eat a nutritious breakfast with protein
+• Stretch for 5 minutes
+
+**Throughout the day:**
+• Take short breaks from sitting every hour — stand, walk, stretch
+• Have vegetables with lunch and dinner
+• Drink water regularly — keep a bottle nearby
+• Walk for 15–20 minutes during lunch or after work
+
+**Evening:**
+• Limit screen time 30 minutes before bed
+• Write down one thing you're grateful for
+• Go to bed at a consistent time
+
+**Weekly:**
+• Try one new healthy recipe
+• Do 2–3 strength training sessions (push-ups, squats, resistance bands)
+• Call or meet a friend or family member
+• Spend time outdoors
+
+💡 *Don't try to change everything at once. Pick one habit and practice it until it feels natural, then add another.*`
   ],
-  malaria: [
-    `### 🦟 Understanding Malaria\n\nMalaria is a life-threatening disease transmitted by infected mosquitoes:\n\n* **Symptoms:** Fever, chills, sweats, headache, nausea, body aches — typically appearing 10–15 days after the mosquito bite.\n* **Treatment:** Antimalarial medications prescribed by a doctor. Early treatment is critical for recovery.\n* **Prevention When Traveling:**\n  * Take prophylactic antimalarial medication as prescribed.\n  * Use insect repellent (DEET or picaridin).\n  * Sleep under insecticide-treated mosquito nets.\n  * Wear long sleeves and pants, especially at dusk and night.\n\n*If you develop fever after traveling to a malaria-endemic area, seek medical attention immediately and mention your travel history.*`
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // HEADACHE, FEVER, STOMACH, COUGH (quick symptom guidance)
+  // ──────────────────────────────────────────────────────────────────────────
+  headache: [
+    `### 🤕 Understanding Headaches
+
+**Common types:**
+• **Tension headache:** A dull, pressing pain on both sides of the head. Often from stress, poor posture, or eye strain.
+• **Migraine:** Intense throbbing pain, usually on one side. May come with nausea, light sensitivity, or vision changes.
+• **Sinus headache:** Pain and pressure around the forehead, eyes, and cheeks. Usually with a cold or allergies.
+• **Dehydration headache:** From not drinking enough water — resolves with hydration.
+
+**Helpful tips for relief:**
+• Drink water — dehydration is a common cause
+• Rest in a dark, quiet room
+• Apply a cool cloth to your forehead or neck
+• Avoid screens for a while
+• Gentle neck and shoulder stretches
+• Over-the-counter pain relief (acetaminophen or ibuprofen) can help if needed
+
+⚠️ *If your headache is sudden and severe (the worst of your life), or comes with fever, stiff neck, confusion, or weakness — seek emergency medical help immediately.*`
   ],
-  typhoid: [
-    `### 🦠 Understanding Typhoid Fever\n\nTyphoid is a bacterial infection spread through contaminated food and water:\n\n* **Symptoms:** Prolonged fever (gradually increasing), headache, stomach pain, constipation or diarrhea, weakness.\n* **Treatment:** Antibiotics prescribed by a doctor. Hospitalization may be needed for severe cases.\n* **Prevention:**\n  * Typhoid vaccine (recommended for travelers to endemic areas).\n  * Drink only bottled or boiled water.\n  * Eat thoroughly cooked food.\n  * Wash hands frequently with soap.\n  * Avoid raw fruits and vegetables unless you can peel them yourself.`
+
+  fever: [
+    `### 🌡️ Understanding Fever
+
+**What is a fever?**
+A fever is a temporary rise in body temperature. In adults, a temperature of 100.4°F (38°C) or higher is generally considered a fever. It's usually a sign that your immune system is fighting an infection.
+
+**Fever is not an illness itself — it's a symptom.** Most fevers from viral infections go away on their own in 2–3 days.
+
+**What you can do at home:**
+• Rest — your body needs energy to fight the infection
+• Drink plenty of fluids — water, clear soups, herbal teas to prevent dehydration
+• Wear lightweight clothing and keep the room at a comfortable temperature
+• Use acetaminophen or ibuprofen if fever is causing discomfort (follow label directions)
+• A lukewarm (not cold) sponge bath can help bring temperature down
+
+**When to see a doctor:**
+• Fever over 103°F (39.4°C) for adults
+• Fever lasting more than 3 days
+• Severe headache, stiff neck, or confusion
+• Difficulty breathing
+• Rash that doesn't fade when pressed
+• Signs of dehydration (dry mouth, little urination, dizziness)
+
+⚠️ *For infants under 3 months with any fever, seek medical attention immediately.*`
   ],
-  tuberculosis: [
-    `### 🫁 Understanding Tuberculosis (TB)\n\nTB is a bacterial infection that primarily affects the lungs:\n\n* **Symptoms:** Persistent cough (lasting 3+ weeks), coughing up blood, chest pain, night sweats, fever, weight loss, fatigue.\n* **How It Spreads:** Through the air when an infected person coughs or sneezes.\n* **Treatment:** TB is curable with a course of antibiotics (usually 6 months). It's critical to complete the full course — stopping early can lead to drug-resistant TB.\n* **Prevention:** TB vaccine (BCG), good ventilation, covering your mouth when coughing, and early diagnosis.\n\n*If you have a persistent cough with fever and weight loss, see a doctor for TB testing.*`
+
+  stomach: [
+    `### 🫃 Digestive Discomfort — Common Causes and Tips
+
+**Common stomach issues:**
+
+**Indigestion:** Feeling full, uncomfortable, or burning after eating
+• Eat smaller meals, chew slowly, avoid lying down after eating
+
+**Bloating and gas:** Often from certain foods, eating too fast, or swallowing air
+• Identify trigger foods (beans, cabbage, onions, carbonated drinks)
+• Eat slowly and chew thoroughly
+
+**Constipation:** Difficulty passing stool, less than 3 times per week
+• Drink more water, eat more fiber (fruits, vegetables, whole grains), exercise regularly
+
+**Diarrhea:** Loose, watery stools
+• Stay hydrated with water or oral rehydration solution
+• Eat bland foods — bananas, rice, applesauce, toast (BRAT diet)
+• Avoid dairy, fried foods, and spicy food until it passes
+
+**Acid reflux or heartburn:** Burning sensation in the chest
+• Avoid spicy, fatty, and acidic foods
+• Don't eat 2–3 hours before lying down
+• Elevate the head of your bed slightly
+
+⚠️ *See a doctor if you have: severe or worsening pain, persistent vomiting, blood in stool, fever, or symptoms lasting more than a week.*`
   ],
-  hepatitis: [
-    `### 🫁 Understanding Hepatitis\n\nHepatitis means inflammation of the liver, commonly caused by viruses:\n\n* **Hepatitis A:** Spread through contaminated food/water. Symptoms: jaundice (yellow skin/eyes), fatigue, nausea. Preventable with vaccine.\n* **Hepatitis B:** Spread through blood and bodily fluids. Can become chronic. Preventable with vaccine.\n* **Hepatitis C:** Spread through blood contact (often via shared needles). Can become chronic and lead to liver damage. No vaccine, but curable with antiviral medication.\n* **Liver Health Tips:** Limit alcohol, maintain healthy weight, get vaccinated for Hepatitis A and B, avoid sharing needles or personal items like razors.`
+
+  cough: [
+    `### 🤧 Colds, Flu, and Cough — What Helps
+
+**Colds vs. Flu at a glance:**
+• **Cold:** Gradual onset, mild symptoms — runny nose, sneezing, sore throat. Usually resolves in 7–10 days.
+• **Flu:** Sudden onset, high fever, body aches, fatigue, headache. Can be more serious.
+
+**Self-care tips for cough and cold:**
+• Rest as much as possible
+• Drink warm fluids — herbal tea with honey, warm water, clear soups
+• Gargle warm salt water for a sore throat (½ teaspoon salt in a glass of warm water)
+• Use a humidifier or take a steamy shower to ease congestion
+• Honey can help soothe a cough (for adults and children over 1 year — not for infants)
+
+**What doesn't help:**
+• Antibiotics do NOT work against viruses (colds, flu) — they only treat bacterial infections
+• Overusing cough syrups can sometimes make symptoms last longer
+
+**When to see a doctor:**
+• Fever lasting more than 3 days
+• Difficulty breathing or chest pain
+• Cough producing blood
+• Symptoms that improve then come back worse
+• If you have a chronic condition (asthma, heart disease, diabetes)
+
+⚠️ *Trust your instincts. If you feel something is seriously wrong, seek medical attention.*`
   ],
-  covid: [
-    `### 🦠 COVID-19 Information\n\nCOVID-19 is a respiratory illness caused by the SARS-CoV-2 virus:\n\n* **Common Symptoms:** Fever, cough, shortness of breath, fatigue, loss of taste or smell, sore throat, body aches.\n* **Prevention:** Stay up to date with vaccines, wear masks in crowded indoor settings, practice good hand hygiene, improve ventilation.\n* **If You're Sick:** Isolate to avoid spreading, rest, stay hydrated, monitor your oxygen levels if you have a pulse oximeter. Seek medical help if you have trouble breathing.\n* **Long COVID:** Some people experience prolonged symptoms (fatigue, brain fog, breathing issues) for weeks or months after infection. If symptoms persist, see your doctor.`
-  ],
-  eye: [
-    `### 👁️ Eye Health Tips\n\nProtect your vision with these habits:\n\n* **20-20-20 Rule:** Every 20 minutes, look at something 20 feet away for 20 seconds to reduce digital eye strain.\n* **UV Protection:** Wear sunglasses that block 99–100% of UV rays to prevent cataracts and macular degeneration.\n* **Regular Exams:** Get your eyes checked every 1–2 years, even if you don't wear glasses. Many eye diseases have no early symptoms.\n* **Nutrition for Eyes:** Vitamin A (carrots, sweet potatoes), lutein (spinach, kale), omega-3s (fish), and vitamin C (citrus) support eye health.\n* **Don't Rub Your Eyes:** This can introduce bacteria and cause damage to the cornea.`,
-    `### 👁️ Common Eye Conditions\n\nUnderstanding common eye problems:\n\n* **Dry Eyes:** Burning, gritty sensation. Use artificial tears, take screen breaks, use a humidifier.\n* **Conjunctivitis (Pink Eye):** Redness, discharge, itching. Viral (usually resolves on its own) or bacterial (requires antibiotic drops). Highly contagious.\n* **Cataracts:** Clouding of the lens — causes blurry vision, glare, faded colors. Common with age. Treated with surgery.\n* **Glaucoma:** Increased pressure in the eye damages the optic nerve. Often symptomless until vision loss occurs. Regular eye exams are crucial.\n* **Computer Vision Syndrome:** Eye strain, headaches, dry eyes from prolonged screen use. Adjust lighting, use blue light filters, and take frequent breaks.`
-  ],
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // GENERAL / FALLBACK
+  // ──────────────────────────────────────────────────────────────────────────
   general: [
-    `Thank you for your question. As your Health Awareness Assistant, here are some key wellness pillars:\n\n* **Hydration:** Drink 8–10 glasses of water daily.\n* **Nutrition:** Focus on whole foods, fiber, lean proteins, and healthy fats.\n* **Physical Activity:** Aim for 150 minutes of moderate exercise weekly.\n* **Sleep:** Prioritize 7–9 hours of quality sleep each night.\n* **Preventive Care:** Schedule regular check-ups and stay up to date with vaccinations.\n\n*If you're experiencing specific symptoms, please consult a licensed medical professional for personalized advice.*`,
-    `Good question! Here's a general health perspective:\n\nYour body thrives on consistency, not perfection. Small daily habits — drinking enough water, eating vegetables at each meal, moving your body, getting fresh air, and sleeping well — compound over time into significant health benefits.\n\nIf you have a specific health topic in mind, feel free to ask about:\n* Nutrition and diet\n* Exercise and fitness\n* Sleep hygiene\n* Stress management\n* Specific diseases or conditions\n* First aid or prevention\n\n*How can I help you further?*`,
-    `Great question. While I don't have a highly specific response for this topic, here are universal health principles:\n\n* **Listen to Your Body:** You know yourself best. If something feels off, don't ignore it.\n* **Prevention is Key:** Regular exercise, balanced nutrition, adequate sleep, and stress management prevent most chronic diseases.\n* **Don't Self-Diagnose:** Online information is educational, not diagnostic. See a doctor for proper evaluation.\n* **Build Sustainable Habits:** Extreme diets and workouts don't last. Focus on gradual, consistent changes.\n\n*Feel free to ask a more specific health question, and I'll do my best to provide helpful information!*`
+    `Thank you for your question. Here's some general health guidance:
+
+The foundation of good health rests on a few key habits:
+• **Eat a balanced diet** — prioritize vegetables, fruits, whole grains, and protein
+• **Stay active** — aim for 30 minutes of movement most days
+• **Get enough sleep** — 7–9 hours for most adults
+• **Drink water** — stay hydrated throughout the day
+• **Manage stress** — take time to relax and connect with others
+• **Avoid tobacco** and limit alcohol
+• **Get regular check-ups** — prevention is always better than cure
+
+If you have a specific health topic in mind, feel free to ask me about:
+• Diseases and medical conditions
+• Symptoms and their possible causes
+• Medicines and their common uses
+• Nutrition and healthy eating
+• Exercise and fitness
+• Mental health
+• First aid
+• Women's health, child health, or elderly care
+• Vaccinations and medical tests
+• Prevention and healthy habits
+
+💡 *I'm here to provide educational information — not to diagnose or treat. For personalized medical advice, please consult a healthcare professional.*`,
+    `That's an interesting health question! While I may not have a detailed answer prepared for this specific topic, I'd be happy to help with any of the following areas:
+
+**You can ask me about:**
+• 🧬 **Diseases** — diabetes, heart disease, thyroid, arthritis, and many more
+• 🔍 **Symptoms** — what they might mean and when to see a doctor
+• 💊 **Medicines** — common types, uses, and how to take them safely
+• 🥗 **Nutrition** — balanced eating, special diets, and meal tips
+• 🏃‍♂️ **Exercise** — getting started, staying motivated, different types
+• 🧘‍♀️ **Mental health** — stress, anxiety, building emotional wellness
+• 🩹 **First aid** — common injuries and emergencies
+• 👶 **Child health** and 👴 **elderly care**
+• 👩 **Women's health**
+• 💉 **Vaccinations** and 🩺 **medical tests**
+• 🌿 **Prevention** and healthy daily habits
+
+*Feel free to ask a more specific question, and I'll do my best to provide clear, helpful, evidence-based information!*`,
+    `Good question! Here's a helpful perspective:
+
+Your body is remarkably good at staying healthy when given the right support. The basics matter more than any complex strategy:
+
+• **Eat real food** — mostly plants, not too much processing
+• **Move regularly** — find activities you enjoy
+• **Sleep well** — make it a priority, not an afterthought
+• **Stay connected** — relationships are essential for health
+• **Don't smoke** — one of the single best things you can do
+• **Keep learning** — understanding your health empowers you
+
+If you'd like to explore any of these areas in more detail, just let me know — I'm happy to share practical, evidence-based information.
+
+⚠️ *Remember: This is educational information. For specific health concerns, please consult a qualified healthcare professional.*`
   ],
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // GREETING
+  // ──────────────────────────────────────────────────────────────────────────
   greeting: [
-    `Hello! I am your **Health Awareness Assistant**. \n\nI can provide educational information on a wide range of health topics including:\n* **Nutrition & Diet** 🥗\n* **Exercise & Fitness** 🏃‍♂️\n* **Sleep Hygiene** 😴\n* **Hydration** 💧\n* **Stress Management & Mental Health** 🧘‍♀️\n* **First Aid** 🩹\n* **Specific Diseases** — diabetes, heart disease, thyroid, arthritis, and many more\n* **Prevention & Screenings** 🩺\n* **Skin, Dental, Eye & Bone Health**\n\nGo ahead, ask me anything health-related!`,
-    `Hi there! 👋 I'm your **Health Awareness Assistant** — here to provide educational health information.\n\nYou can ask me about:\n* "What are the symptoms of diabetes?"\n* "How can I improve my sleep?"\n* "Tips for managing stress"\n* "Heart-healthy foods"\n* "First aid for burns"\n* "How to boost my immunity"\n\n*What health topic would you like to explore today?*`,
-    `Welcome! I'm your **AI Health Awareness Assistant**. I'm here to share educational information about health, wellness, and disease prevention.\n\nAsk me anything about:\n✅ Nutrition and healthy eating\n✅ Exercise and fitness\n✅ Sleep and rest\n✅ Stress and mental wellness\n✅ Common diseases and conditions\n✅ First aid and emergencies\n✅ Preventive healthcare\n✅ Women's health, bone health, skin care, and more\n\n*Remember: I'm an educational tool, not a substitute for professional medical advice. Let me know how I can help!*`
+    `Hello! 👋 I'm your **Health Awareness Assistant**.
+
+Think of me as a friendly health educator. I'm here to share clear, reliable information about a wide range of health topics — in simple language you can understand and use.
+
+**You can ask me about:**
+• 🧬 **Diseases & conditions** — diabetes, heart disease, thyroid, asthma, arthritis, and many more
+• 🔍 **Symptoms** — what they might mean and when to see a doctor
+• 💊 **Medicines** — common types and how to use them safely
+• 🥗 **Nutrition** — healthy eating, balanced diets, meal tips
+• 🏃‍♂️ **Fitness** — exercise for all levels
+• 🧘‍♀️ **Mental wellness** — managing stress and building resilience
+• 🩹 **First aid** — what to do in common emergencies
+• 👶 **Child health** & 👴 **Elderly care**
+• 👩 **Women's health**
+• 💉 **Vaccinations** & 🩺 **Medical tests**
+• 🌿 **Prevention & healthy habits**
+
+**A few things to know:**
+✅ I provide educational information only
+✅ I use simple, clear language
+✅ I'll always encourage you to see a doctor for personal medical concerns
+
+*Go ahead — ask me any health question!*`,
+    `Hi there! 👋 Welcome to your **Health Awareness Assistant**.
+
+I'm here to help you understand health topics in a clear, friendly, and practical way. Whether you're curious about a specific disease, wondering about symptoms, looking for healthy eating tips, or wanting to start exercising — I've got information to share.
+
+**Here are some questions to get started:**
+• "What are the early signs of diabetes?"
+• "How much water should I drink every day?"
+• "What's the best way to manage stress?"
+• "Can you explain my blood test results?"
+• "What vaccines do adults need?"
+• "How can I help my elderly parent stay healthy?"
+
+💡 *I explain things in simple language and always prioritize your safety. I don't diagnose or prescribe — but I can help you understand your health better.*
+
+*What would you like to learn about today?*`,
+    `Welcome! I'm your **Health Awareness Assistant** — your friendly guide to understanding health and wellness.
+
+My goal is to explain health information in a way that's clear, practical, and easy to apply. Here's what makes me different:
+
+📚 **I focus on education** — I help you understand health topics
+🛡️ **Safety first** — I never diagnose or prescribe
+💬 **Simple language** — I avoid confusing medical jargon
+📋 **Detailed answers** — I use bullet points and examples
+🌍 **Whole-person health** — I cover body and mind
+
+**I can help you learn about:**
+• Diseases and their common symptoms
+• What different symptoms might suggest
+• How common medicines work
+• Nutrition and building better eating habits
+• Starting and sticking with exercise
+• Managing stress and mental wellness
+• First aid for everyday situations
+• Health at every age — children, adults, and seniors
+• Preventive care and healthy habits
+
+*Remember: I'm an educational tool. For personal medical advice, always consult a doctor who knows your health history.*
+
+*Ask me anything about health!*`
   ]
 };
 
+// ────────────────────────────────────────────────────────────────────────────
+// Hindi responses
+// ────────────────────────────────────────────────────────────────────────────
 const RESPONSES_HI = {
-  eat: `### 🥗 स्वस्थ भोजन और पोषण\n\nसंतुलित आहार आपके शरीर को सही ढंग से काम करने के लिए आवश्यक पोषक तत्व प्रदान करता है:\n\n* **साबुत अनाज खाएं:** ओट्स, ब्राउन राइस, दालें और रोटी को प्राथमिकता दें।\n* **सब्जियाँ और फल:** अपनी थाली का आधा हिस्सा रंगीन सब्जियों और फलों से भरें।\n* **चीनी और नमक कम करें:** मीठे पेय, प्रसंस्कृत खाद्य पदार्थ और जंक फूड से बचें।\n* **पानी पिएं:** दिन में 8-10 गिलास पानी पिएं।\n\n*याद रखें: व्यक्तिगत पोषण संबंधी जरूरतें उम्र, लिंग और स्वास्थ्य स्थिति के अनुसार भिन्न होती हैं। व्यक्तिगत सलाह के लिए डाइटीशियन से परामर्श करें।*`,
+  eat: `### 🥗 स्वस्थ भोजन और पोषण\n\nसंतुलित आहार आपके शरीर को सही ढंग से काम करने के लिए आवश्यक पोषक तत्व प्रदान करता है:\n\n* **साबुत अनाज खाएं:** ओट्स, ब्राउन राइस, दालें और रोटी को प्राथमिकता दें।\n* **सब्जियाँ और फल:** अपनी थाली का आधा हिस्सा रंगीन सब्जियों और फलों से भरें।\n* **चीनी और नमक कम करें:** मीठे पेय, प्रसंस्कृत खाद्य पदार्थ और जंक फूड से बचें।\n* **पानी पिएं:** दिन में 8-10 गिलास पानी पिएं।\n\n*याद रखें: व्यक्तिगत पोषण संबंधी जरूरतें उम्र, लिंग और स्वास्थ्य स्थिति के अनुसार भिन्न होती हैं।*`,
   exercise: `### 🏃‍♂️ शारीरिक गतिविधि और फिटनेस\n\nनियमित व्यायाम आपके स्वास्थ्य के लिए अत्यंत महत्वपूर्ण है:\n\n* **साप्ताहिक लक्ष्य:** प्रति सप्ताह कम से कम 150 मिनट मध्यम तीव्रता का व्यायाम करें।\n* **शक्ति प्रशिक्षण:** सप्ताह में 2 दिन मांसपेशियों को मजबूत करने वाले व्यायाम करें।\n* **बैठने का समय कम करें:** हर घंटे 5 मिनट के लिए उठकर चलें।\n* **छोटी शुरुआत करें:** रोज 10-15 मिनट पैदल चलने से शुरू करें।\n\n*नोट: किसी भी नए व्यायाम कार्यक्रम से पहले अपने चिकित्सक से परामर्श करें।*`,
   sleep: `### 😴 नींद में सुधार के उपाय\n\nअच्छी नींद शारीरिक और मानसिक स्वास्थ्य दोनों के लिए आवश्यक है:\n\n1. **नियमित समय:** हर दिन एक ही समय पर सोएं और उठें।\n2. **वातावरण:** कमरे को अंधेरा, शांत और ठंडा रखें।\n3. **स्क्रीन बंद करें:** सोने से 30-60 मिनट पहले मोबाइल और टीवी बंद करें।\n4. **कैफीन से बचें:** शाम को चाय, कॉफी और शराब से बचें।\n\n*अगर लगातार नींद न आने की समस्या हो तो डॉक्टर से मिलें।*`,
   hydration: `### 💧 जलयोजन (हाइड्रेशन)\n\nपानी आपके शरीर के हर कार्य के लिए आवश्यक है:\n\n* **रोज 8-10 गिलास पानी पिएं।**\n* **व्यायाम से पहले और बाद में अतिरिक्त पानी पिएं।**\n* **फलों और सब्जियों से भी पानी मिलता है** — तरबूज, खीरा, संतरा।\n* **डिहाइड्रेशन के लक्षण:** सिरदर्द, थकान, गहरे रंग का पेशाब।\n\n*पेशाब का हल्का पीला रंग अच्छे हाइड्रेशन का संकेत है।*`,
@@ -143,18 +1251,26 @@ const RESPONSES_HI = {
 };
 
 const healthTips = [
-  "**Health Tip:** Try to walk for 10-15 minutes after your meals. It improves digestion, helps stabilize blood sugar, and adds steps to your day.",
-  "**Health Tip:** Swap one sugary drink today with a glass of water. Small cutbacks in added sugars have massive long-term benefits.",
-  "**Health Tip:** Practice the 20-20-20 rule for eye health if you work on a screen. Every 20 minutes, look 20 feet away for 20 seconds.",
-  "**Health Tip:** Add an extra serving of vegetables to your lunch or dinner today. Vegetables are packed with vital fiber, vitamins, and minerals.",
-  "**Health Tip:** Take 5 deep breaths right now. Inhale slowly through your nose, hold briefly, and let it go. This calms the nervous system.",
-  "**Health Tip:** Establish a 'screen-free hour' before bed tonight. Read a book, journal, or stretch instead of scrolling.",
-  "**Health Tip:** Eat a rainbow of fruits and vegetables — different colors provide different nutrients your body needs.",
-  "**Health Tip:** Drink a glass of water first thing in the morning to rehydrate after a night's sleep.",
-  "**Health Tip:** Standing for 5 minutes every hour reduces the health risks of prolonged sitting.",
-  "**Health Tip:** Flossing daily is just as important as brushing — it reaches 40% of tooth surfaces that brushing misses."
+  "**Health Tip:** Walk for 10–15 minutes after meals — it helps digestion and steady blood sugar.",
+  "**Health Tip:** Swap one sugary drink for water today. Small changes add up over time.",
+  "**Health Tip:** Practice the 20-20-20 rule for your eyes — every 20 minutes, look 20 feet away for 20 seconds.",
+  "**Health Tip:** Add one extra serving of vegetables to your lunch or dinner today.",
+  "**Health Tip:** Take 5 slow, deep breaths right now. It calms your nervous system instantly.",
+  "**Health Tip:** Go screen-free for 30 minutes before bed tonight. Read or stretch instead.",
+  "**Health Tip:** Eat a rainbow of fruits and vegetables — different colors mean different nutrients.",
+  "**Health Tip:** Drink a glass of water first thing in the morning to rehydrate after sleep.",
+  "**Health Tip:** Stand up and stretch for 2 minutes every hour if you sit for long periods.",
+  "**Health Tip:** Flossing daily reaches 40% of tooth surfaces that brushing misses.",
+  "**Health Tip:** A 20-minute walk in nature can significantly lower stress levels.",
+  "**Health Tip:** Include protein at every meal — it keeps you full and supports muscle health.",
+  "**Health Tip:** Get 7–8 hours of sleep — your body repairs itself while you rest.",
+  "**Health Tip:** Wash your hands for 20 seconds — it's one of the best ways to prevent illness.",
+  "**Health Tip:** Laughing reduces stress hormones. Watch something funny or spend time with people who make you smile."
 ];
 
+// ────────────────────────────────────────────────────────────────────────────
+// Topic tracking for response variety
+// ────────────────────────────────────────────────────────────────────────────
 let usedResponseIndices = {};
 
 function pickRandom(arr, topic) {
@@ -171,6 +1287,9 @@ function pickRandom(arr, topic) {
   return arr[idx];
 }
 
+// ────────────────────────────────────────────────────────────────────────────
+// Helper functions
+// ────────────────────────────────────────────────────────────────────────────
 function escapeRegExp(string) {
   return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
@@ -188,6 +1307,9 @@ function containsWordRoot(text, wordList) {
   return false;
 }
 
+// ────────────────────────────────────────────────────────────────────────────
+// Safety & health checks
+// ────────────────────────────────────────────────────────────────────────────
 function isBlacklisted(message) {
   const blacklistWords = [
     'code', 'coding', 'program', 'programming', 'python', 'javascript', 'html', 'css',
@@ -210,26 +1332,30 @@ function isHealthRelated(message) {
                      'नमस्ते', 'नमस्कार', 'हेलो', 'मदद', 'सहायता', 'सुझाव'];
   if (containsWordRoot(message, greetings)) return true;
   const healthRoots = [
-    'health', 'wellness', 'fitness', 'hygiene', 'mental', 'lifestyle', 'preventive',
+    'health', 'wellness', 'fitness', 'hygiene', 'mental', 'lifestyle', 'preventive', 'prevention',
     'diet', 'nutrition', 'eat', 'food', 'meal', 'calorie', 'vitamin', 'protein', 'fat', 'carb',
-    'exercise', 'workout', 'sport', 'walk', 'run', 'cardio', 'strength', 'stretch',
+    'exercise', 'workout', 'sport', 'walk', 'run', 'cardio', 'strength', 'stretch', 'yoga',
     'sleep', 'insomnia', 'tired', 'bedtime', 'rest', 'fatigue',
     'hydrate', 'hydration', 'water', 'drink', 'fluid',
-    'stress', 'anxiety', 'calm', 'relax', 'meditate', 'mindful', 'depress',
+    'stress', 'anxiety', 'calm', 'relax', 'meditate', 'mindful', 'depress', 'mental health',
     'first aid', 'burn', 'cut', 'wound', 'bleed', 'choke', 'sprain', 'injury', 'injured',
-    'wash', 'teeth', 'clean', 'brush', 'soap', 'bath', 'shower',
+    'wash', 'teeth', 'clean', 'brush', 'soap', 'bath', 'shower', 'hygiene',
     'vaccine', 'vaccination', 'checkup', 'screening', 'test', 'immun',
     'disease', 'diabetes', 'hypertension', 'pressure', 'heart', 'cancer', 'obesity', 'cholesterol', 'stroke',
     'headache', 'migraine', 'fever', 'temperature', 'stomach', 'nausea', 'vomit', 'belly', 'indigestion',
     'cough', 'cold', 'flu', 'sore throat', 'congestion', 'runny nose', 'breathe', 'breathing',
     'pain', 'ache', 'sick', 'ill', 'doctor', 'medical', 'hospital', 'medicine', 'drug', 'symptom',
     'body', 'lung', 'muscle', 'bone', 'skin', 'blood', 'therap', 'treatment', 'dose', 'therapy',
-    'dentist', 'nutritionist', 'cardiologist',
+    'dentist', 'nutritionist', 'cardiologist', 'pediatrician', 'gynecologist',
     'asthma', 'allergy', 'arthritis', 'thyroid', 'kidney', 'uti', 'infection', 'back pain',
-    'acne', 'eczema', 'dental', 'tooth', 'gum', 'digestion', 'constipation', 'diarrhea', 'acid reflux', 'gerd',
-    'immunity', 'immune', 'weight', 'obese', 'pregnancy', 'pregnant', 'bone', 'osteoporosis',
-    'anemia', 'dengue', 'malaria', 'typhoid', 'tuberculosis', 'tb', 'hepatitis', 'covid',
-    'eye', 'vision', 'glasses', 'corona', 'virus', 'bacteria', 'infection',
+    'acne', 'eczema', 'dental', 'tooth', 'teeth', 'gum', 'digestion', 'constipation', 'diarrhea', 'acid reflux', 'gerd',
+    'immunity', 'immune', 'weight', 'obese', 'pregnancy', 'pregnant', 'prenatal', 'bone', 'osteoporosis',
+    'anemia', 'dengue', 'malaria', 'typhoid', 'tuberculosis', 'tb', 'hepatitis', 'covid', 'corona',
+    'eye', 'vision', 'glasses', 'virus', 'bacteria', 'infection',
+    'women', 'woman', 'child', 'children', 'baby', 'infant', 'elderly', 'senior', 'old age', 'aging',
+    'medicine', 'tablet', 'pill', 'antibiotic', 'prescription', 'dose', 'dosage',
+    'lab', 'report', 'test result', 'blood test', 'xray', 'ultrasound', 'mri', 'ct scan', 'ecg',
+    'symptom', 'diagnosis', 'treatment', 'therapy', 'surgery',
     'स्वास्थ्य', 'सेहत', 'तंदुरुस्ती', 'फिटनेस', 'स्वच्छता', 'मानसिक', 'जीवनशैली',
     'आहार', 'पोषण', 'खाना', 'भोजन', 'विटामिन', 'प्रोटीन', 'कैलोरी',
     'व्यायाम', 'कसरत', 'योग', 'चलना', 'दौड़', 'जिम',
@@ -248,19 +1374,26 @@ function isHealthRelated(message) {
 }
 
 function isEmergency(message) {
+  const msgLower = message.toLowerCase();
   const emergencyKeywords = [
     'chest pain', 'heart attack', 'breathing difficulty', 'difficulty breathing',
     'shortness of breath', "can't breathe", 'cannot breathe', 'can not breathe',
     'stroke', 'unconscious', 'heavy bleeding', 'severe bleeding', 'suicidal',
     'kill myself', 'poisoned', 'poisoning', 'seizure', 'passed out'
   ];
-  const msgLower = message.toLowerCase();
   return emergencyKeywords.some(keyword => msgLower.includes(keyword));
 }
 
+// ────────────────────────────────────────────────────────────────────────────
+// Topic detection
+// ────────────────────────────────────────────────────────────────────────────
 function detectSpecificCondition(message) {
   const m = message.toLowerCase();
 
+  // Emergency
+  if (isEmergency(m)) return 'emergency';
+
+  // Diseases (check specific before general)
   if (containsWordRoot(m, ['diabetes', 'diabetic', 'blood sugar', 'sugar level', 'insulin', 'madhumeh', 'मधुमेह'])) return 'diabetes';
   if (containsWordRoot(m, ['blood pressure', 'hypertension', 'bp', 'high bp', 'low bp', 'hypotension', 'रक्तचाप'])) return 'bloodpressure';
   if (containsWordRoot(m, ['heart', 'cardiac', 'cardio', 'chest pain', 'heart attack', 'heart disease', 'हृदय'])) return 'heart';
@@ -288,11 +1421,37 @@ function detectSpecificCondition(message) {
   if (containsWordRoot(m, ['covid', 'corona', 'coronavirus', 'कोविड'])) return 'covid';
   if (containsWordRoot(m, ['eye', 'vision', 'sight', 'glaucoma', 'cataract', 'conjunctivitis', 'आंख'])) return 'eye';
 
+  // Symptoms
+  if (containsWordRoot(m, ['symptom', 'symptoms', 'cause', 'signs', 'लक्षण', 'कारण'])) return 'symptoms';
+
+  // Medicines
+  if (containsWordRoot(m, ['medicine', 'medication', 'tablet', 'pill', 'antibiotic', 'drug', 'dose', 'dosage', 'prescription', 'दवा', 'गोली'])) return 'medicines';
+
+  // Vaccinations
+  if (containsWordRoot(m, ['vaccine', 'vaccination', 'vaccinate', 'immunization', 'shot', 'टीका'])) return 'vaccinations';
+
+  // Medical tests
+  if (containsWordRoot(m, ['test', 'lab', 'report', 'blood test', 'xray', 'x-ray', 'ultrasound', 'mri', 'ct scan', 'ecg', 'check-up', 'checkup', 'screening', 'जांच', 'रिपोर्ट'])) return 'medicaltests';
+
+  // Women's health
+  if (containsWordRoot(m, ['women', 'woman', 'female', 'menstrual', 'period', 'pcos', 'menopause', 'gynecologist', 'महिला'])) return 'womenshealth';
+
+  // Child health
+  if (containsWordRoot(m, ['child', 'children', 'baby', 'infant', 'toddler', 'pediatric', 'kids', 'बच्चा', 'शिशु'])) return 'childhealth';
+
+  // Elderly care
+  if (containsWordRoot(m, ['elderly', 'senior', 'old age', 'aging', 'older adult', 'बुजुर्ग'])) return 'elderlycare';
+
+  // Lifestyle disorders
+  if (containsWordRoot(m, ['lifestyle', 'disorder', 'chronic disease', 'non-communicable'])) return 'disease';
+
+  // Common symptoms
   if (containsWordRoot(m, ['headache', 'migraine'])) return 'headache';
   if (containsWordRoot(m, ['fever', 'temperature', 'hot', 'बुखार'])) return 'fever';
   if (containsWordRoot(m, ['stomach', 'nausea', 'vomit', 'belly', 'diarrhea', 'constipation'])) return 'stomach';
   if (containsWordRoot(m, ['cough', 'cold', 'flu', 'sore throat', 'congestion', 'runny nose'])) return 'cough';
 
+  // General health topics
   if (containsWordRoot(m, ['eat', 'diet', 'food', 'nutrition', 'meal'])) return 'nutrition';
   if (containsWordRoot(m, ['exercise', 'fitness', 'workout', 'sport', 'walk', 'run'])) return 'exercise';
   if (containsWordRoot(m, ['sleep', 'insomnia', 'tired', 'bedtime', 'rest'])) return 'sleep';
@@ -300,22 +1459,25 @@ function detectSpecificCondition(message) {
   if (containsWordRoot(m, ['stress', 'anxiety', 'mental', 'wellness', 'calm', 'relax', 'meditate'])) return 'stress';
   if (containsWordRoot(m, ['first aid', 'burn', 'cut', 'wound', 'bleed', 'choking'])) return 'firstaid';
   if (containsWordRoot(m, ['hygiene', 'wash', 'teeth', 'brush', 'clean'])) return 'hygiene';
-  if (containsWordRoot(m, ['preventive', 'vaccine', 'checkup', 'screening', 'test'])) return 'preventive';
-  if (containsWordRoot(m, ['disease', 'lifestyle'])) return 'disease';
+  if (containsWordRoot(m, ['preventive', 'vaccine', 'checkup', 'screening', 'prevention', 'health tip'])) return 'prevention';
 
+  // Tips and greetings
   if (containsWordRoot(m, ['tip', 'daily'])) return 'tip';
   if (containsWordRoot(m, ['hello', 'hi', 'hey', 'help', 'who are you', 'what can you do', 'welcome'])) return 'greeting';
 
   return 'general';
 }
 
+// ────────────────────────────────────────────────────────────────────────────
+// Response selection
+// ────────────────────────────────────────────────────────────────────────────
 function getLocalResponse(message) {
   const topic = detectSpecificCondition(message);
 
   if (topic === 'emergency') return RESPONSES.emergency[0];
   if (topic === 'greeting') return pickRandom(RESPONSES.greeting, 'greeting');
   if (topic === 'tip') {
-    return `Here is a daily tip for you:\n\n${healthTips[Math.floor(Math.random() * healthTips.length)]}`;
+    return `Here's a daily health tip for you:\n\n${healthTips[Math.floor(Math.random() * healthTips.length)]}`;
   }
 
   if (RESPONSES[topic]) {
@@ -335,19 +1497,25 @@ function getHindiFallback(message) {
   return RESPONSES_HI.general;
 }
 
+// ────────────────────────────────────────────────────────────────────────────
+// Main entry point — called from app.js
+// ────────────────────────────────────────────────────────────────────────────
 function getChatbotResponse(userMessage, conversationHistory, lang) {
-  const refusalEn = "I am a Health Awareness Assistant and can only help with health, wellness, fitness, hygiene, mental wellness, healthy lifestyle, and preventive healthcare topics. Please ask a health-related question.";
-  const refusalHi = "मैं एक स्वास्थ्य जागरूकता सहायक हूँ और केवल स्वास्थ्य, कल्याण, फिटनेस, स्वच्छता, मानसिक स्वास्थ्य, स्वस्थ जीवनशैली और निवारक स्वास्थ्य विषयों में मदद कर सकता हूँ। कृपया स्वास्थ्य से संबंधित प्रश्न पूछें।";
+  const refusalEn = "I'm a Health Awareness Assistant, and I can only help with health and wellness topics. Please ask me a health-related question!";
+  const refusalHi = "मैं एक स्वास्थ्य जागरूकता सहायक हूँ और केवल स्वास्थ्य और कल्याण से संबंधित विषयों पर मदद कर सकता हूँ। कृपया स्वास्थ्य से संबंधित प्रश्न पूछें।";
   const refusalMessage = lang === 'hi' ? refusalHi : refusalEn;
 
-  const disclaimerEn = "\n\n*Disclaimer: I am an AI Health Awareness Assistant. The information provided here is for educational and informational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition. If you think you may have a medical emergency, call your doctor or local emergency services immediately.*";
-  const disclaimerHi = "\n\n*अस्वीकरण: मैं एक AI स्वास्थ्य जागरूकता सहायक हूँ। यहाँ दी गई जानकारी केवल शैक्षिक और सूचनात्मक उद्देश्यों के लिए है। यह पेशेवर चिकित्सा सलाह, निदान या उपचार का विकल्प नहीं है। किसी भी चिकित्सा स्थिति के बारे में अपने चिकित्सक से परामर्श करें। आपातकाल में तुरंत 112 पर कॉल करें।*";
+  const disclaimerEn = "\n\n---\n*⚠️ Important: I am an AI Health Awareness Assistant. The information I provide is for educational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment. Always consult a qualified healthcare provider for personal medical concerns. If you are experiencing a medical emergency, call your local emergency services immediately.*";
+  const disclaimerHi = "\n\n---\n*⚠️ महत्वपूर्ण: मैं एक AI स्वास्थ्य जागरूकता सहायक हूँ। मेरे द्वारा दी गई जानकारी केवल शैक्षिक उद्देश्यों के लिए है। यह पेशेवर चिकित्सा सलाह, निदान या उपचार का विकल्प नहीं है। व्यक्तिगत चिकित्सा संबंधी चिंताओं के लिए कृपया योग्य स्वास्थ्य सेवा प्रदाता से परामर्श करें। आपातकालीन स्थिति में तुरंत अपनी स्थानीय आपातकालीन सेवाओं से संपर्क करें।*";
+
   const disclaimerText = lang === 'hi' ? disclaimerHi : disclaimerEn;
 
+  // Safety: block off-topic content
   if (isBlacklisted(userMessage) || !isHealthRelated(userMessage)) {
     return refusalMessage;
   }
 
+  // Safety: emergency override
   if (isEmergency(userMessage)) {
     return RESPONSES.emergency[0] + disclaimerText;
   }
