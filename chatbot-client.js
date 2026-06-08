@@ -3646,8 +3646,8 @@ function detectSpecificCondition(message) {
   if (containsWordRoot(m, ['eggs', 'egg', 'egg white', 'egg yolk'])) return 'dailylife_eggs';
   if (containsWordRoot(m, ['bread', 'gluten', 'whole wheat bread', 'white bread', 'gluten free'])) return 'dailylife_bread';
 
-  // Tips and greetings
-  if (containsWordRoot(m, ['tip', 'daily'])) return 'tip';
+  // Tips — must include "tip" or "tips" specifically
+  if (containsWordRoot(m, ['tip', 'tips'])) return 'tip';
   if (containsWordRoot(m, ['hello', 'hi', 'hey', 'help', 'who are you', 'what can you do', 'welcome'])) return 'greeting';
 
   return 'general';
