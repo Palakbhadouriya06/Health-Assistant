@@ -1110,6 +1110,785 @@ A fever is a temporary rise in body temperature. In adults, a temperature of 100
   ],
 
   // ──────────────────────────────────────────────────────────────────────────
+  // DIZZINESS & VERTIGO
+  // ──────────────────────────────────────────────────────────────────────────
+  dizziness: [
+    `### 🌀 Understanding Dizziness and Vertigo
+
+**Dizziness vs. Vertigo:**
+• **Dizziness** is a general feeling of being lightheaded, unsteady, or about to faint
+• **Vertigo** is a specific sensation that you or the room is spinning or moving
+
+**Common causes of dizziness:**
+
+**Inner ear problems (most common cause of vertigo):**
+• **BPPV (Benign Paroxysmal Positional Vertigo):** Tiny crystals in your inner ear become dislodged. Triggered by head movements like rolling over in bed or looking up. Can be treated with simple repositioning maneuvers (Epley maneuver) done by a doctor or physiotherapist.
+• **Labyrinthitis:** Inflammation of the inner ear, often after a viral infection. May include hearing loss or ringing in the ears.
+
+**Other common causes:**
+• **Dehydration:** Not drinking enough water — one of the easiest causes to fix
+• **Low blood sugar:** Skipping meals or not eating enough
+• **Low blood pressure:** Standing up too quickly (orthostatic hypotension)
+• **Anemia:** Low iron levels reduce oxygen to your brain
+• **Medication side effects:** Some blood pressure medicines, sedatives, and antidepressants can cause dizziness
+• **Anxiety or stress:** Can cause a floating or unreal feeling
+• **Migraine:** Some migraines cause vertigo without headache
+
+**When to seek emergency help:**
+• Dizziness with chest pain, shortness of breath, or irregular heartbeat
+• Sudden severe headache
+• Sudden confusion or trouble speaking
+• Weakness or numbness on one side of the body
+• Fainting or loss of consciousness
+
+**What you can do:**
+• Sit or lie down immediately when dizzy — don't try to "walk it off"
+• Drink water if you might be dehydrated
+• Eat something if you haven't eaten in a while
+• Avoid sudden head movements
+• If you feel faint, lie down and elevate your legs
+
+*Occasional mild dizziness is common and usually not serious. But if it's frequent, severe, or comes with other symptoms, see a doctor to identify the underlying cause.*`
+  ],
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // ADDITIONAL DISEASES & CONDITIONS
+  // ──────────────────────────────────────────────────────────────────────────
+  asthma: [
+    `### 🌬️ Understanding Asthma
+
+**What is asthma?**
+Asthma is a condition where your airways become narrow and swollen, making it harder to breathe. It often starts in childhood but can develop at any age.
+
+**Common triggers:**
+• Allergens — pollen, dust mites, pet dander, mold
+• Irritants — smoke, strong smells, air pollution, cold air
+• Exercise — especially in cold, dry weather
+• Respiratory infections — colds and flu
+
+**Common symptoms:**
+• Wheezing (a whistling sound when breathing)
+• Shortness of breath
+• Chest tightness
+• Coughing, especially at night or early morning
+
+**Management tips:**
+• Take your preventer inhaler daily as prescribed — it reduces airway inflammation over time
+• Keep your reliever inhaler with you at all times for sudden attacks
+• Know your triggers and avoid them when possible
+• Have an asthma action plan from your doctor
+
+*Asthma is a manageable condition. Most people with asthma live full, active lives with proper treatment.*`
+  ],
+
+  allergy: [
+    `### 🤧 Understanding Allergies
+
+**What is an allergy?**
+An allergy is your immune system reacting to a normally harmless substance as if it's a threat. Common allergens include pollen, dust mites, pet dander, certain foods, and insect stings.
+
+**Common symptoms:**
+• Sneezing, runny or stuffy nose
+• Itchy, watery eyes
+• Skin rashes or hives
+• Swelling of lips, tongue, or throat
+• Digestive issues (from food allergies)
+• In severe cases: difficulty breathing (anaphylaxis)
+
+**Management approaches:**
+• **Avoidance** — the most effective strategy. Know your triggers and reduce exposure
+• **Antihistamines** — block the allergic reaction (cetirizine, loratadine)
+• **Nasal sprays** — steroid sprays reduce nasal inflammation
+• **Allergy shots (immunotherapy)** — gradual exposure builds long-term tolerance
+
+**When to seek emergency help:**
+Difficulty breathing, swelling of throat/tongue, rapid pulse, dizziness after exposure — use epinephrine auto-injector if available and call emergency services immediately
+
+*If you suspect you have allergies, an allergist can help identify your triggers and create a management plan.*`
+  ],
+
+  arthritis: [
+    `### 🦴 Understanding Arthritis
+
+**What is arthritis?**
+Arthritis is inflammation of one or more joints. It causes pain, stiffness, and swelling. The two most common types are osteoarthritis (wear and tear) and rheumatoid arthritis (autoimmune).
+
+**Common symptoms:**
+• Joint pain and tenderness
+• Stiffness, especially in the morning
+• Swelling around joints
+• Reduced range of motion
+• Warmth or redness over the joint
+
+**Self-care strategies:**
+• **Gentle exercise** — swimming, walking, and stretching keep joints flexible
+• **Heat and cold therapy** — warm baths relax muscles; ice packs reduce swelling
+• **Maintain a healthy weight** — every kg of weight loss reduces knee joint load by 4 kg
+• **Supportive devices** — canes, braces, ergonomic tools reduce joint strain
+• **Anti-inflammatory foods** — fatty fish, turmeric, berries, leafy greens
+
+**When to see a doctor:**
+If joint pain interferes with daily activities, lasts more than a few weeks, or is accompanied by swelling and redness
+
+*Early diagnosis and treatment can slow progression and improve quality of life. See a rheumatologist for proper evaluation.*`
+  ],
+
+  thyroid: [
+    `### 🔬 Understanding Thyroid Disorders
+
+**What is the thyroid?**
+Your thyroid is a small butterfly-shaped gland in your neck that produces hormones controlling your metabolism — how your body uses energy.
+
+**Two main conditions:**
+
+**Hypothyroidism (underactive):**
+• Symptoms: Fatigue, weight gain, cold sensitivity, dry skin, hair loss, slow heart rate, depression
+• Treatment: Daily thyroid hormone medication (levothyroxine) — safe and effective
+
+**Hyperthyroidism (overactive):**
+• Symptoms: Weight loss, rapid heartbeat, anxiety, tremors, heat sensitivity, bulging eyes
+• Treatment: Medication, radioactive iodine, or surgery depending on the cause
+
+**Diet tips for thyroid health:**
+• Take thyroid medication on an empty stomach (30-60 minutes before food)
+• Iodine is essential — iodized salt, fish, dairy, eggs
+• Selenium supports thyroid function — Brazil nuts, tuna, eggs
+• Regular blood tests help monitor and adjust medication
+
+*Thyroid conditions are common and very treatable. Most people with proper treatment lead normal, healthy lives.*`
+  ],
+
+  kidney: [
+    `### 🫘 Understanding Kidney Health
+
+**What do kidneys do?**
+Your kidneys filter waste from your blood, balance body fluids, control blood pressure, and produce hormones for red blood cell production and bone health.
+
+**Common kidney problems:**
+
+**Kidney stones:**
+Hard mineral deposits that form in the kidneys. Symptoms include severe pain in the back/side, blood in urine, and nausea. Most stones pass on their own with plenty of water.
+
+**UTIs (Urinary Tract Infections):**
+Bacterial infections more common in women. Symptoms: burning during urination, frequent urge to urinate, cloudy urine. Treated with antibiotics.
+
+**Chronic Kidney Disease (CKD):**
+Gradual loss of kidney function, most often caused by diabetes or high blood pressure. Early stages have no symptoms — that's why regular check-ups matter.
+
+**Protecting your kidneys:**
+• Control blood sugar and blood pressure
+• Stay hydrated — drink enough water
+• Limit salt and processed foods
+• Avoid frequent use of NSAID painkillers (ibuprofen, naproxen)
+• Don't smoke
+• Get regular kidney function tests if you have diabetes or high BP
+
+*Kidney disease is often silent until advanced stages. Prevention and early detection are key.*`
+  ],
+
+  backpain: [
+    `### 💪 Understanding Back Pain
+
+**How common is it?**
+Back pain is extremely common — about 8 out of 10 people experience it at some point. Most back pain is not serious and improves within a few weeks.
+
+**Common causes:**
+• Muscle strain — from lifting, twisting, or sudden movements
+• Poor posture — slouching at a desk or looking down at phones
+• Prolonged sitting — weakens back and core muscles over time
+• Disk problems — bulging or herniated disks can press on nerves
+• Arthritis — spinal joint inflammation
+
+**Self-care tips for relief:**
+• Stay active — gentle movement helps more than bed rest
+• Apply heat or ice — ice for the first 48 hours, then heat
+• Maintain good posture — sit and stand with your shoulders back
+• Stretch gently — hamstring and hip stretches reduce back tension
+• Sleep on your side with a pillow between your knees
+
+**When to see a doctor:**
+Pain after a fall or injury, numbness or weakness in legs, trouble controlling bladder or bowel, pain with fever, or pain lasting more than 4 weeks
+
+*Most back pain resolves on its own with conservative care. A physiotherapist can help with targeted exercises if needed.*`
+  ],
+
+  skincare: [
+    `### 🧴 Understanding Skin Health
+
+**Common skin concerns:**
+
+**Acne:**
+• Caused by clogged pores, bacteria, and excess oil
+• Wash your face twice daily with a gentle cleanser
+• Avoid picking or squeezing — it causes scarring
+• Over-the-counter treatments: benzoyl peroxide, salicylic acid
+• For persistent acne, see a dermatologist
+
+**Eczema (atopic dermatitis):**
+• Dry, itchy, inflamed skin — often runs in families with allergies
+• Moisturize regularly with fragrance-free creams
+• Avoid harsh soaps and very hot water
+• Use lukewarm water for baths and pat skin dry gently
+
+**Dry skin:**
+• Common in winter or from excessive washing
+• Use a gentle, hydrating moisturizer after bathing
+• Drink enough water and use a humidifier in dry environments
+
+**Sun protection:**
+• Use sunscreen with SPF 30+ every day, even when cloudy
+• Sun damage accumulates over time and causes premature aging and skin cancer
+
+**When to see a dermatologist:**
+Any mole that changes shape, color, or size; a sore that doesn't heal; persistent rash; severe acne
+
+*Your skin reflects your overall health. A healthy diet, hydration, and sun protection go a long way.*`
+  ],
+
+  dental: [
+    `### 🦷 Understanding Oral and Dental Health
+
+**Daily dental care:**
+• Brush twice a day with fluoride toothpaste — at least 2 minutes each time
+• Floss once a day — it reaches 40% of tooth surfaces that brushing misses
+• Replace your toothbrush every 3-4 months
+• Use a soft-bristled brush to avoid damaging gums
+
+**Common dental issues:**
+
+**Cavities (tooth decay):**
+• Caused by bacteria feeding on sugar and producing acid that erodes enamel
+• Prevention: limit sugary foods/drinks, brush after meals, use fluoride toothpaste
+
+**Gum disease (gingivitis):**
+• Red, swollen gums that bleed when brushing
+• Caused by plaque buildup along the gumline
+• Reversible with good brushing, flossing, and professional cleaning
+
+**Bad breath (halitosis):**
+• Usually from poor oral hygiene, food particles, or dry mouth
+• Also can indicate gum disease or other health issues
+• Stay hydrated, brush your tongue, and see your dentist
+
+**Visit your dentist:**
+Every 6 months for a check-up and professional cleaning. Early detection saves teeth.
+
+*Oral health is connected to overall health — gum disease is linked to heart disease, diabetes, and other conditions.*`
+  ],
+
+  digestion: [
+    `### 🫃 Understanding Digestive Health
+
+**Common digestive issues:**
+
+**Indigestion:**
+A feeling of fullness, burning, or discomfort after eating
+• Eat smaller meals and chew food thoroughly
+• Avoid lying down for 2-3 hours after meals
+• Identify trigger foods that cause discomfort
+
+**Acid reflux / GERD:**
+Stomach acid flows back into the esophagus, causing heartburn
+• Avoid spicy, fatty, and acidic foods
+• Don't eat close to bedtime
+• Elevate the head of your bed slightly
+• Over-the-counter antacids can help for occasional reflux
+
+**Constipation:**
+Difficulty passing stool, fewer than 3 bowel movements per week
+• Drink more water — dehydration is a common cause
+• Increase fiber — fruits, vegetables, whole grains, legumes
+• Exercise regularly — movement stimulates digestion
+• Don't ignore the urge to go
+
+**Diarrhea:**
+Loose, watery stools
+• Stay hydrated — water or oral rehydration solution
+• Eat bland foods — bananas, rice, applesauce, toast (BRAT diet)
+• Avoid dairy, fried foods, and caffeine until it resolves
+• See a doctor if it lasts more than 2 days or you have signs of dehydration
+
+**Gut health tips:**
+• Eat fermented foods — yogurt, kimchi, idli, dosa (natural probiotics)
+• Stay hydrated
+• Manage stress — the gut-brain connection is real
+• Eat a variety of plant foods for a healthy gut microbiome
+
+*If digestive symptoms persist or are severe, consult a gastroenterologist.*`
+  ],
+
+  immunity: [
+    `### 🛡️ Understanding Your Immune System
+
+**How your immune system works:**
+Your immune system is a network of cells, tissues, and organs that defend your body against harmful invaders like bacteria, viruses, and parasites.
+
+**Ways to support your immune system:**
+
+**Nutrition matters:**
+• **Vitamin C:** Citrus fruits, bell peppers, broccoli, strawberries
+• **Vitamin D:** Sunlight (15-20 min daily), fatty fish, fortified milk, supplements if needed
+• **Zinc:** Nuts, seeds, legumes, whole grains
+• **Protein:** Essential for antibody production — include protein at every meal
+• **Gut health:** Fermented foods support the gut microbiome, which plays a key role in immunity
+
+**Lifestyle factors:**
+• **Sleep:** 7-9 hours — your immune system repairs during sleep
+• **Exercise:** Moderate activity boosts immune function
+• **Stress management:** Chronic stress suppresses immunity
+• **Hydration:** Water helps all bodily systems function properly
+• **Don't smoke** and limit alcohol
+
+**What weakens immunity:**
+Poor sleep, chronic stress, smoking, excessive alcohol, poor nutrition, lack of exercise, being overweight
+
+**Note:** There's no such thing as "boosting" your immune system beyond healthy levels. The goal is to support it so it functions optimally. Be wary of products claiming to "supercharge" your immunity.
+
+*If you get sick frequently or infections take unusually long to heal, talk to your doctor about whether there's an underlying issue.*`
+  ],
+
+  weight: [
+    `### ⚖️ Understanding Weight Management
+
+**Weight and health:**
+Weight is one factor in health, not the only one. A person can be healthy at different weights, and health habits matter more than the number on the scale.
+
+**Healthy approaches to weight management:**
+
+**For weight loss:**
+• Create a moderate calorie deficit (300-500 calories below maintenance)
+• Focus on nutrient-dense foods — vegetables, fruits, lean protein, whole grains
+• Include protein at every meal — it keeps you full and preserves muscle
+• Drink water before meals — helps with portion control
+• Be physically active — aim for 150-300 minutes per week
+• Get enough sleep — poor sleep disrupts hormones that control hunger
+
+**For weight gain (healthy):**
+• Eat more frequent meals — 5-6 smaller meals throughout the day
+• Choose calorie-dense nutritious foods — nuts, nut butters, avocados, dried fruit, full-fat dairy
+• Include healthy fats — olive oil, ghee, nuts, seeds
+• Strength training builds muscle mass, which increases healthy weight
+
+**What doesn't work:**
+• Crash diets — most weight lost is regained within 1-2 years
+• Skipping meals — leads to overeating later
+• Extreme restrictions — unsustainable and may cause nutrient deficiencies
+• "Detox" teas or supplements — no scientific evidence, potentially harmful
+
+*Focus on building healthy habits you can maintain long-term, not quick fixes. Slow, steady changes lead to lasting results.*`
+  ],
+
+  pregnancy: [
+    `### 👶 Understanding Pregnancy and Prenatal Health
+
+**Pregnancy basics:**
+Pregnancy lasts about 40 weeks (9 months), divided into three trimesters. Each trimester brings different changes for both mother and baby.
+
+**First trimester (weeks 1-12):**
+• Common symptoms: nausea (morning sickness), fatigue, breast tenderness
+• Start prenatal vitamins with folic acid (400-800 mcg daily)
+• Avoid alcohol, smoking, and certain medications
+• First ultrasound usually at 8-14 weeks
+
+**Second trimester (weeks 13-27):**
+• Many women feel more energetic
+• Baby movements become noticeable (quickening)
+• Anatomy scan ultrasound at 18-22 weeks
+• Back pain and heartburn may begin
+
+**Third trimester (weeks 28-40):**
+• Baby grows rapidly — weight gain accelerates
+• Shortness of breath and frequent urination are common
+• Braxton Hicks contractions (practice contractions) may occur
+• Prepare for delivery — birth plan, hospital bag, childbirth classes
+
+**Essential nutrition during pregnancy:**
+• Folic acid — prevents neural tube defects
+• Iron — prevents anemia; found in leafy greens, legumes, fortified cereals
+• Calcium — for baby's bone development; milk, yogurt, cheese
+• Protein — supports baby's growth; eggs, chicken, fish (low mercury), beans
+• DHA (omega-3) — supports baby's brain development; fatty fish, algae supplements
+
+**Foods to avoid:**
+Raw/undercooked meat, fish high in mercury (shark, swordfish), unpasteurized dairy, raw eggs, excess caffeine (limit to 200 mg/day), alcohol
+
+*Every pregnancy is unique. Regular check-ups with your obstetrician are essential for a healthy pregnancy.*`
+  ],
+
+  bone: [
+    `### 🦴 Understanding Bone Health
+
+**Why bone health matters:**
+Your bones provide structure, protect organs, store calcium, and work with muscles to enable movement. Bone density peaks around age 30, then gradually declines.
+
+**Osteoporosis:**
+A condition where bones become weak and brittle — so fragile that a minor fall can cause a fracture. It's called a "silent disease" because there are no symptoms until a bone breaks.
+
+**Risk factors:**
+• Being female (especially after menopause)
+• Family history of osteoporosis
+• Low body weight
+• Smoking and excessive alcohol
+• Low calcium and vitamin D intake
+• Sedentary lifestyle
+• Long-term use of steroid medications
+
+**Protecting your bones:**
+**Calcium:** 1,000-1,200 mg daily
+• Sources: Milk, yogurt, cheese, leafy greens, fortified plant milks, almonds, sardines
+
+**Vitamin D:** 600-800 IU daily — helps your body absorb calcium
+• Sources: Sunlight (15-20 min daily), fatty fish, egg yolks, fortified foods, supplements
+
+**Exercise:**
+• Weight-bearing exercises — walking, jogging, dancing, climbing stairs
+• Strength training — lifting weights builds bone density
+• Balance exercises — tai chi, yoga — prevent falls
+
+**Lifestyle:**
+• Don't smoke
+• Limit alcohol
+• Maintain a healthy weight
+
+**Bone density testing:**
+Recommended for women 65+ and men 70+, or earlier if you have risk factors. Early detection allows early treatment.
+
+*Strong bones are built over a lifetime. Good nutrition and regular exercise at every age make a difference.*`
+  ],
+
+  anemia: [
+    `### 🩸 Understanding Anemia
+
+**What is anemia?**
+Anemia occurs when your blood doesn't have enough healthy red blood cells to carry adequate oxygen to your body's tissues. It's one of the most common blood disorders.
+
+**Common causes:**
+• **Iron deficiency** — the most common type. From blood loss (heavy periods, internal bleeding) or inadequate iron intake
+• **Vitamin deficiency** — low B12 or folate (folic acid)
+• **Chronic disease** — kidney disease, cancer, autoimmune conditions
+• **Genetic** — sickle cell anemia, thalassemia
+
+**Common symptoms:**
+• Fatigue and weakness
+• Pale or yellowish skin
+• Shortness of breath
+• Dizziness or lightheadedness
+• Cold hands and feet
+• Brittle nails
+• Rapid or irregular heartbeat
+• Unusual cravings for ice, dirt, or starch (pica)
+
+**Iron-rich foods:**
+• **Animal sources** (heme iron, absorbed better): Red meat, poultry, fish, eggs
+• **Plant sources** (non-heme iron): Spinach, lentils, beans, fortified cereals, tofu, pumpkin seeds
+• **Tip:** Pair plant iron with vitamin C (lemon, orange, tomatoes) to improve absorption
+
+**Treatment:**
+Depends on the cause. Iron supplements for iron deficiency, B12 injections for B12 deficiency, or treating the underlying condition. Always take supplements as directed by a doctor — too much iron can be harmful.
+
+**When to see a doctor:**
+If you have persistent fatigue, pale skin, or any of the other symptoms listed — a simple blood test (CBC) can diagnose anemia.
+
+*Anemia is highly treatable once the cause is identified. Don't ignore persistent fatigue — it's your body telling you something is off.*`
+  ],
+
+  dengue: [
+    `### 🦟 Understanding Dengue Fever
+
+**What is dengue?**
+Dengue is a viral infection spread by Aedes mosquitoes. It's common in tropical and subtropical regions. The same mosquito also spreads chikungunya and Zika.
+
+**Common symptoms (appear 4-10 days after a mosquito bite):**
+• High fever (104°F / 40°C)
+• Severe headache, especially behind the eyes
+• Severe joint and muscle pain (hence "breakbone fever")
+• Nausea and vomiting
+• Skin rash (appears 2-5 days after fever starts)
+• Mild bleeding (nose or gums)
+
+**Warning signs of severe dengue (requires immediate hospital care):**
+• Severe abdominal pain
+• Persistent vomiting
+• Bleeding under the skin or from nose/gums
+• Difficulty breathing
+• Restlessness or confusion
+• Drop in blood pressure
+
+**What to do if you suspect dengue:**
+• See a doctor immediately — early diagnosis saves lives
+• Rest and stay hydrated
+• Use acetaminophen for fever (NOT ibuprofen or aspirin — they increase bleeding risk)
+• Don't take antibiotics (dengue is viral)
+• Hospitalization may be needed for monitoring in severe cases
+
+**Prevention:**
+• Use mosquito repellent (DEET or picaridin)
+• Wear long sleeves and pants
+• Use mosquito nets while sleeping
+• Eliminate standing water where mosquitoes breed
+
+*There is no specific treatment for dengue — early detection and supportive care are crucial. Most people recover within 1-2 weeks.*`
+  ],
+
+  malaria: [
+    `### 🦟 Understanding Malaria
+
+**What is malaria?**
+Malaria is a serious disease caused by a parasite (Plasmodium) spread through the bite of infected Anopheles mosquitoes. It's most common in tropical regions.
+
+**Common symptoms (appear 10-15 days after mosquito bite):**
+• High fever with chills and sweating — often in cycles every 48-72 hours
+• Headache
+• Body aches and fatigue
+• Nausea and vomiting
+• Diarrhea
+
+**Severe malaria (medical emergency):**
+• Confusion or seizures
+• Difficulty breathing
+• Severe anemia
+• Yellow skin/eyes (jaundice)
+• Dark urine
+• Organ failure
+
+**What to do if you suspect malaria:**
+• Get tested immediately — a rapid diagnostic test or blood smear can confirm it
+• Treatment is with antimalarial medications (artemisinin-based combination therapy is standard)
+• Early treatment is critical — severe malaria can be fatal within 24 hours
+
+**Prevention:**
+• Antimalarial medications if traveling to high-risk areas (consult a travel clinic)
+• Use mosquito repellent (DEET)
+• Sleep under insecticide-treated mosquito nets
+• Wear long sleeves and pants, especially at dusk and night
+• Use insecticide sprays or coils indoors
+
+*Malaria is preventable and treatable. Seek medical attention immediately if you develop fever during or after travel to a malaria-endemic area.*`
+  ],
+
+  typhoid: [
+    `### 🔬 Understanding Typhoid Fever
+
+**What is typhoid?**
+Typhoid is a bacterial infection caused by *Salmonella typhi*. It spreads through contaminated food and water, and is more common in areas with poor sanitation.
+
+**Common symptoms (appear gradually over 1-3 weeks after exposure):**
+• Fever that starts low and rises daily (can reach 104°F / 40°C)
+• Headache
+• Fatigue and weakness
+• Abdominal pain
+• Constipation or diarrhea
+• Loss of appetite
+• Rose-colored spots on the chest and abdomen (in some people)
+
+**What to do if you suspect typhoid:**
+• See a doctor for a blood or stool test
+• Typhoid is treated with antibiotics — complete the full course even if you feel better
+• Severe cases may require hospitalization
+• Dehydration is common — drink plenty of fluids
+
+**Prevention:**
+• **Vaccination** — typhoid vaccine is available and recommended for travel to high-risk areas
+• **Safe food and water:**
+  - Drink only boiled or bottled water
+  - Eat fully cooked food served hot
+  - Avoid raw vegetables and fruits you can't peel
+  - Wash hands thoroughly and frequently
+
+*Typhoid is treatable with antibiotics. With prompt treatment, most people recover fully within 7-14 days.*`
+  ],
+
+  tuberculosis: [
+    `### Understanding Tuberculosis (TB)
+
+**What is TB?**
+TB is a bacterial infection caused by *Mycobacterium tuberculosis*. It most commonly affects the lungs but can affect other parts of the body. It spreads through the air when an infected person coughs or sneezes.
+
+**Latent vs. Active TB:**
+• **Latent TB:** You have the bacteria but no symptoms and can't spread it. About 1 in 4 people worldwide have latent TB.
+• **Active TB:** You have symptoms and can spread it to others. About 5-10% of people with latent TB develop active TB at some point.
+
+**Symptoms of active TB:**
+• Persistent cough (lasting 3+ weeks) — may produce blood
+• Chest pain
+• Fever and night sweats
+• Unexplained weight loss
+• Fatigue
+• Loss of appetite
+
+**Treatment:**
+• TB is curable with a course of antibiotics lasting 6-9 months
+• Take all medications exactly as prescribed — stopping early can lead to drug-resistant TB
+• Directly observed therapy (DOT) is often used to ensure completion
+
+**Prevention:**
+• BCG vaccine — given in many countries at birth, protects against severe forms of TB in children
+• Avoid close contact with people who have active TB
+• Good ventilation reduces transmission risk
+• If you have latent TB, preventive treatment can reduce the risk of developing active TB
+
+*TB is preventable and curable. It remains a major global health problem, but treatment success rates are high with proper care.*`
+  ],
+
+  hepatitis: [
+    `### 🫘 Understanding Hepatitis
+
+**What is hepatitis?**
+Hepatitis means inflammation of the liver. It can be caused by viruses, alcohol, medications, or autoimmune conditions. The most common viral types are A, B, and C.
+
+**Hepatitis A:**
+• Spread through contaminated food or water
+• Usually causes acute (short-term) illness — most people recover fully
+• Symptoms: fatigue, nausea, abdominal pain, jaundice (yellow skin/eyes), dark urine
+• Prevention: Hepatitis A vaccine + good hygiene and safe food/water
+• No specific treatment — rest, hydration, and supportive care
+
+**Hepatitis B:**
+• Spread through blood, unprotected sex, or from mother to baby during birth
+• Can cause both acute and chronic infection
+• Chronic hepatitis B can lead to liver cirrhosis and liver cancer
+• Prevention: Hepatitis B vaccine (given at birth in many countries)
+• Antiviral medications can control chronic hepatitis B
+
+**Hepatitis C:**
+• Spread through blood contact — often through contaminated needles or unscreened blood
+• Can become chronic in most people
+• Leading cause of liver transplant in many countries
+• No vaccine available
+• Highly treatable with modern antiviral medications (cure rates over 95%)
+
+**Liver-friendly habits:**
+• Limit alcohol — it directly damages liver cells
+• Maintain a healthy weight — fatty liver disease is common
+• Get vaccinated for hepatitis A and B
+• Practice safe hygiene and safe sex
+• Don't share needles, razors, or toothbrushes
+
+*If you have risk factors or symptoms, a simple blood test can check for hepatitis. Early detection prevents liver damage.*`
+  ],
+
+  covid: [
+    `### 🦠 Understanding COVID-19
+
+**What is COVID-19?**
+COVID-19 is caused by the SARS-CoV-2 virus. It spreads through respiratory droplets when an infected person coughs, sneezes, or talks.
+
+**Common symptoms:**
+• Fever or chills
+• Cough
+• Shortness of breath
+• Fatigue
+• Body aches
+• Loss of taste or smell
+• Sore throat
+• Headache
+
+**What to do if you have symptoms:**
+• Test for COVID-19 (home test or at a clinic)
+• Stay home and isolate to avoid spreading to others
+• Rest, stay hydrated, and monitor your symptoms
+• Over-the-counter medications can help with fever and aches
+
+**When to seek emergency care:**
+• Trouble breathing
+• Persistent chest pain or pressure
+• Confusion
+• Difficulty waking or staying awake
+• Pale, gray, or blue-colored skin, lips, or nail beds
+
+**Prevention:**
+• Vaccination — COVID-19 vaccines are safe and effective at preventing severe illness
+• Boosters — recommended as immunity wanes over time
+• Good ventilation in indoor spaces
+• Washing hands frequently
+• Wearing a mask in crowded or high-risk settings
+
+**Long COVID:**
+Some people experience symptoms that last weeks or months after the initial infection — including fatigue, brain fog, and shortness of breath. If this happens, see your doctor.
+
+*Most people recover from COVID-19 without complications. Vaccination significantly reduces the risk of severe illness and long COVID.*`
+  ],
+
+  eye: [
+    `### 👁️ Understanding Eye Health
+
+**Common vision problems:**
+• **Nearsightedness (myopia):** Distant objects look blurry — very common, especially in children and young adults
+• **Farsightedness (hyperopia):** Close objects look blurry
+• **Astigmatism:** Blurred vision at all distances due to an irregularly shaped cornea
+• **Presbyopia:** Age-related difficulty focusing on close objects (starts around age 40)
+
+**Common eye conditions:**
+• **Conjunctivitis (pink eye):** Red, itchy, watery eyes — can be viral, bacterial, or allergic
+• **Cataract:** Clouding of the lens — very common with age; treatable with surgery
+• **Glaucoma:** Increased pressure in the eye that damages the optic nerve — often no symptoms until vision loss occurs
+• **Dry eye:** Insufficient tear production — common with screen use, aging, and dry environments
+
+**Tips for healthy eyes:**
+• **20-20-20 rule:** Every 20 minutes, look at something 20 feet away for 20 seconds — reduces eye strain
+• **UV protection:** Wear sunglasses that block 100% of UV rays
+• **Good lighting:** Avoid reading or using screens in dim light
+• **Screen position:** Keep screens at arm's length and slightly below eye level
+• **Blink regularly:** We blink less when looking at screens — make a conscious effort
+
+**Nutrition for eye health:**
+• Vitamin A — carrots, sweet potatoes, spinach (prevents night blindness)
+• Lutein and zeaxanthin — leafy greens, eggs (protect against macular degeneration)
+• Omega-3 fatty acids — fish, flaxseeds (help with dry eyes)
+
+**When to see an eye doctor:**
+Annual check-ups are recommended. See a doctor sooner if you have sudden vision changes, eye pain, flashes of light, floaters, or redness with pain.
+
+*Many eye conditions are treatable when caught early. Don't skip regular eye exams.*`
+  ],
+
+  hygiene: [
+    `### 🧼 Understanding Personal Hygiene
+
+**Why hygiene matters:**
+Good hygiene prevents the spread of infections, keeps your skin and body healthy, and helps you feel fresh and confident.
+
+**Daily hygiene habits:**
+
+**Hand washing — the single most effective way to prevent illness:**
+• Wash with soap and water for at least 20 seconds
+• Before eating, after using the toilet, after coughing/sneezing, after touching public surfaces
+• Use hand sanitizer (60%+ alcohol) when soap isn't available
+
+**Oral hygiene:**
+• Brush teeth twice daily with fluoride toothpaste
+• Floss once daily
+• Clean your tongue (with a tongue scraper or your toothbrush)
+• Visit the dentist every 6 months
+
+**Bathing and skin care:**
+• Shower or bathe daily, or every other day depending on activity level
+• Use mild soap — harsh soaps strip natural oils
+• Moisturize after bathing while skin is still slightly damp
+• Wash your face twice daily if you have oily or acne-prone skin
+
+**Hair care:**
+• Wash hair as needed — this varies from daily to weekly depending on hair type
+• Use shampoo suited to your scalp type (oily, dry, dandruff-prone)
+• Condition the ends of your hair, not the scalp
+
+**Other important habits:**
+• Wear clean clothes daily, especially underwear and socks
+• Trim nails regularly — dirt collects under long nails
+• Wash bedding weekly
+• Don't share towels, razors, or toothbrushes
+• Cover your mouth when coughing or sneezing (use your elbow or a tissue)
+
+**Hygiene during illness:**
+• Wash hands even more frequently
+• Use separate towels and utensils if possible
+• Dispose of tissues properly
+• Stay home to avoid spreading illness to others
+
+*Good hygiene is one of the simplest and most effective ways to protect your health and the health of those around you.*`
+  ],
+
+  // ──────────────────────────────────────────────────────────────────────────
   // GENERAL / FALLBACK
   // ──────────────────────────────────────────────────────────────────────────
   general: [
@@ -2682,6 +3461,7 @@ function detectSpecificCondition(message) {
   if (containsWordRoot(m, ['fever', 'temperature', 'hot', 'बुखार'])) return 'fever';
   if (containsWordRoot(m, ['stomach', 'nausea', 'vomit', 'belly', 'diarrhea', 'constipation'])) return 'stomach';
   if (containsWordRoot(m, ['cough', 'cold', 'flu', 'sore throat', 'congestion', 'runny nose'])) return 'cough';
+  if (containsWordRoot(m, ['dizz', 'vertigo', 'lightheaded', 'feeling faint', 'spinning', 'dizzy', 'dizziness'])) return 'dizziness';
 
   // General health topics
   if (containsWordRoot(m, ['eat', 'diet', 'food', 'nutrition', 'meal'])) return 'nutrition';
