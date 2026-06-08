@@ -1,0 +1,2 @@
+# This is a Node.js project. See package.json for dependencies.
+# (This file is kept for reference only; not used by the app.)
