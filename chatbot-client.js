@@ -3170,6 +3170,131 @@ const healthTips = [
 ];
 
 // ────────────────────────────────────────────────────────────────────────────
+// Symptom → Disease mapping — suggests possible conditions from symptoms
+// ────────────────────────────────────────────────────────────────────────────
+const SYMPTOM_DISEASE_MAP = {
+  headache:     ['Migraine', 'Tension headache', 'Sinusitis', 'Common cold', 'Flu', 'Dengue', 'Malaria', 'Typhoid', 'COVID-19', 'High blood pressure', 'Dehydration', 'Eye strain'],
+  fever:        ['Common cold', 'Flu', 'Dengue', 'Malaria', 'Typhoid', 'COVID-19', 'Urinary tract infection', 'Pneumonia', 'Tuberculosis', 'Hepatitis', 'Typhoid'],
+  cough:        ['Common cold', 'Flu', 'COVID-19', 'Asthma', 'Allergies', 'Bronchitis', 'Pneumonia', 'Tuberculosis', 'GERD / Acid reflux'],
+  sorethroat:   ['Common cold', 'Flu', 'COVID-19', 'Strep throat', 'Tonsillitis', 'Allergies', 'Dry air'],
+  runnynose:    ['Common cold', 'Flu', 'Allergies (hay fever)', 'Sinusitis', 'COVID-19'],
+  fatigue:      ['Anemia', 'Thyroid disorders', 'Diabetes', 'Depression', 'Sleep apnea', 'Chronic fatigue syndrome', 'Iron deficiency', 'Dehydration', 'Poor sleep'],
+  bodyache:     ['Flu', 'Dengue', 'Malaria', 'COVID-19', 'Fibromyalgia', 'Arthritis', 'Vitamin D deficiency'],
+  stomachpain:  ['Indigestion', 'Gas / bloating', 'Constipation', 'Food poisoning', 'Gastritis', 'Acid reflux', 'IBS', 'Stomach infection', 'Appendicitis (if severe, right-sided)'],
+  nausea:       ['Food poisoning', 'Migraine', 'Pregnancy', 'GERD', 'Stomach infection', 'Vertigo', 'Anxiety', 'Medication side effect'],
+  diarrhea:     ['Food poisoning', 'Stomach infection', 'IBS', 'Crohn\'s disease', 'Typhoid', 'Traveler\'s diarrhea', 'Antibiotic side effect'],
+  constipation: ['Dehydration', 'Low fiber diet', 'IBS', 'Hypothyroidism', 'Medication side effect', 'Lack of exercise'],
+  backpain:     ['Muscle strain', 'Poor posture', 'Herniated disc', 'Sciatica', 'Arthritis', 'Osteoporosis', 'Kidney infection / stones'],
+  dizziness:    ['Dehydration', 'Low blood pressure', 'Anemia', 'Inner ear disorder (BPPV)', 'Vertigo', 'Low blood sugar', 'Anxiety', 'Medication side effect', 'Migraine'],
+  chestpain:    ['Muscle strain', 'Anxiety / panic attack', 'GERD / heartburn', 'Angina', 'Heart attack', 'Costochondritis'],
+  shortnessofbreath: ['Asthma', 'Anxiety / panic attack', 'COVID-19', 'Pneumonia', 'Anemia', 'Heart condition', 'Allergic reaction'],
+  skinrash:     ['Allergic reaction', 'Eczema', 'Psoriasis', 'Contact dermatitis', 'Heat rash', 'Measles', 'Dengue', 'Chickenpox'],
+  swelling:     ['Injury / sprain', 'Allergic reaction', 'Arthritis', 'Kidney disease', 'Pregnancy (edema)', 'Heart condition', 'Infection'],
+  weightloss:   ['Diabetes', 'Thyroid disorders (hyperthyroidism)', 'Tuberculosis', 'Cancer', 'Digestive disorders', 'Depression'],
+  weightgain:   ['Hypothyroidism', 'PCOS', 'Depression', 'Medication side effect', 'Insulin resistance', 'Fluid retention'],
+  hairloss:     ['Thyroid disorders', 'Iron deficiency anemia', 'Stress', 'PCOS', 'Nutritional deficiency', 'Medication side effect', 'Aging'],
+  sleepproblems: ['Stress / anxiety', 'Depression', 'Sleep apnea', 'Caffeine overuse', 'Poor sleep hygiene', 'Chronic pain', 'Thyroid disorders'],
+  visionchanges: ['Eye strain', 'Migraine', 'Diabetes', 'High blood pressure', 'Glaucoma', 'Cataract', 'Aging (presbyopia)'],
+  numbness:     ['Diabetes (neuropathy)', 'Vitamin B12 deficiency', 'Pinched nerve', 'Carpal tunnel syndrome', 'Poor circulation', 'Multiple sclerosis'],
+  palpitations: ['Anxiety / panic attack', 'Caffeine excess', 'Dehydration', 'Anemia', 'Thyroid disorders (hyperthyroidism)', 'Heart arrhythmia', 'Stress']
+};
+
+const SYMPTOM_KEYWORDS = {
+  headache:     ['headache', 'head ache', 'head pain', 'migraine'],
+  fever:        ['fever', 'temperature', 'high temperature', 'body heat', 'hot'],
+  cough:        ['cough', 'coughing'],
+  sorethroat:   ['sore throat', 'scratchy throat', 'throat pain', 'painful swallowing'],
+  runnynose:    ['runny nose', 'stuffy nose', 'nasal congestion', 'blocked nose', 'sniffles'],
+  fatigue:      ['fatigue', 'tired', 'exhausted', 'weakness', 'low energy', 'lethargy', 'worn out', 'drained'],
+  bodyache:     ['body ache', 'body pain', 'muscle pain', 'muscle ache', 'myalgia', 'aches'],
+  stomachpain:  ['stomach pain', 'belly pain', 'abdominal pain', 'stomach ache', 'tummy ache'],
+  nausea:       ['nausea', 'nauseous', 'sick to stomach', 'feel like vomiting'],
+  diarrhea:     ['diarrhea', 'loose stools', 'loose motion', 'watery stool'],
+  constipation: ['constipation', 'constipated', 'hard stool', 'difficulty passing stool'],
+  backpain:     ['back pain', 'backache', 'lower back pain'],
+  dizziness:    ['dizziness', 'dizzy', 'lightheaded', 'vertigo', 'spinning sensation', 'feeling faint'],
+  chestpain:    ['chest pain', 'chest tightness', 'chest pressure'],
+  shortnessofbreath: ['shortness of breath', 'difficulty breathing', 'breathless', 'can\'t breathe', 'wheezing'],
+  skinrash:     ['rash', 'skin rash', 'hives', 'red spots', 'itching'],
+  swelling:     ['swelling', 'swollen', 'edema', 'puffiness'],
+  weightloss:   ['weight loss', 'losing weight', 'unexplained weight loss'],
+  weightgain:   ['weight gain', 'gaining weight'],
+  hairloss:     ['hair loss', 'hair fall', 'balding', 'thinning hair'],
+  sleepproblems:['insomnia', 'can\'t sleep', 'trouble sleeping', 'poor sleep', 'staying asleep'],
+  visionchanges:['blurry vision', 'blurred vision', 'vision changes', 'difficulty seeing'],
+  numbness:     ['numbness', 'tingling', 'pins and needles', 'numb'],
+  palpitations: ['palpitations', 'heart racing', 'rapid heartbeat', 'pounding heart', 'skipped beat']
+};
+
+function detectUserSymptoms(message) {
+  const m = message.toLowerCase();
+  const detected = [];
+  for (const [symptom, keywords] of Object.entries(SYMPTOM_KEYWORDS)) {
+    for (const kw of keywords) {
+      if (m.includes(kw)) {
+        detected.push(symptom);
+        break;
+      }
+    }
+  }
+  return detected;
+}
+
+function getSymptomDiseaseResponse(symptoms) {
+  if (symptoms.length === 0) return null;
+
+  // Collect all possible conditions for the detected symptoms
+  let conditionCounts = {};
+  for (const symptom of symptoms) {
+    const conditions = SYMPTOM_DISEASE_MAP[symptom] || [];
+    for (const condition of conditions) {
+      conditionCounts[condition] = (conditionCounts[condition] || 0) + 1;
+    }
+  }
+
+  // Separate conditions that match ALL symptoms vs. some symptoms
+  const allMatch = [];
+  const someMatch = [];
+  for (const [condition, count] of Object.entries(conditionCounts)) {
+    if (count === symptoms.length) {
+      allMatch.push(condition);
+    } else if (count >= Math.ceil(symptoms.length / 2)) {
+      someMatch.push({ name: condition, matchCount: count });
+    }
+  }
+
+  // Build symptom names for display
+  const symptomNames = symptoms.map(s => s.replace(/([A-Z])/g, ' $1').trim()).map(s => s.charAt(0).toUpperCase() + s.slice(1));
+
+  let response = `### 🔍 Possible Conditions Based on Your Symptoms\n\n`;
+  response += `Based on the symptoms you mentioned (${symptomNames.join(', ')}), here are some conditions that may share these symptoms:\n\n`;
+
+  if (allMatch.length > 0) {
+    response += `**Conditions that commonly include ALL these symptoms:**\n`;
+    allMatch.slice(0, 6).forEach(c => { response += `• ${c}\n`; });
+    response += `\n`;
+  }
+
+  if (someMatch.length > 0) {
+    response += `**Conditions that include MOST of these symptoms:**\n`;
+    someMatch.sort((a, b) => b.matchCount - a.matchCount).slice(0, 5).forEach(c => {
+      response += `• ${c.name} (${c.matchCount} of ${symptoms.length} symptoms)\n`;
+    });
+    response += `\n`;
+  }
+
+  response += `**What you should do next:**\n`;
+  response += `• Keep track of when symptoms started and how they change\n`;
+  response += `• Note any other symptoms that appear\n`;
+  response += `• See a doctor if symptoms persist more than a few days or get worse\n`;
+  response += `• For severe symptoms (high fever, difficulty breathing, severe pain), seek medical care promptly\n\n`;
+
+  response += `⚠️ **Important:** Many different conditions share the same symptoms. This is NOT a diagnosis. Only a doctor can determine what's actually wrong after examining you and running appropriate tests.`;
+
+  return response;
+}
+
+// ────────────────────────────────────────────────────────────────────────────
 // Dailylife topic to array index mapping
 // ────────────────────────────────────────────────────────────────────────────
 const DAILYLIFE_INDEX_MAP = {
@@ -3519,6 +3644,13 @@ function getLocalResponse(message, history) {
   if (topic === 'greeting') return pickRandom(RESPONSES.greeting, 'greeting');
   if (topic === 'tip') {
     return `Here's a daily health tip for you:\n\n${healthTips[Math.floor(Math.random() * healthTips.length)]}`;
+  }
+
+  // Symptom-to-disease matching: detect symptoms in the message
+  const detectedSymptoms = detectUserSymptoms(message);
+  if (topic === 'symptoms' || detectedSymptoms.length >= 2) {
+    const symptomReply = getSymptomDiseaseResponse(detectedSymptoms);
+    if (symptomReply) return symptomReply;
   }
 
   // Handle dailylife subtopics by mapping to the right array index
