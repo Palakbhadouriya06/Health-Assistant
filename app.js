@@ -99,14 +99,14 @@ const I18N = {
 };
 
 const TOPIC_SUGGESTIONS = {
-  nutrition:  ['sug_healthy_foods', 'sug_give_tips', 'sug_routine', 'sug_home_remedies', 'sug_tell_more'],
-  fitness:    ['sug_exercise', 'sug_give_tips', 'sug_routine', 'sug_prevention', 'sug_tell_more'],
-  mental:     ['sug_give_tips', 'sug_routine', 'sug_home_remedies', 'sug_prevention', 'sug_tell_more'],
-  sleep:      ['sug_give_tips', 'sug_routine', 'sug_home_remedies', 'sug_tell_more'],
-  hydration:  ['sug_give_tips', 'sug_healthy_foods', 'sug_routine', 'sug_tell_more'],
-  firstaid:   ['sug_home_remedies', 'sug_give_tips', 'sug_prevention', 'sug_tell_more'],
-  tips:       ['sug_healthy_foods', 'sug_exercise', 'sug_routine', 'sug_prevention', 'sug_tell_more'],
-  general:    ['sug_tell_more', 'sug_give_tips', 'sug_healthy_foods', 'sug_exercise', 'sug_prevention', 'sug_routine', 'sug_home_remedies'],
+  nutrition:  ['sug_healthy_foods', 'sug_give_tips', 'sug_routine', 'sug_home_remedies'],
+  fitness:    ['sug_exercise', 'sug_give_tips', 'sug_routine', 'sug_prevention'],
+  mental:     ['sug_give_tips', 'sug_routine', 'sug_home_remedies', 'sug_prevention'],
+  sleep:      ['sug_give_tips', 'sug_routine', 'sug_home_remedies'],
+  hydration:  ['sug_give_tips', 'sug_healthy_foods', 'sug_routine'],
+  firstaid:   ['sug_home_remedies', 'sug_give_tips', 'sug_prevention'],
+  tips:       ['sug_healthy_foods', 'sug_exercise', 'sug_routine', 'sug_prevention'],
+  general:    ['sug_give_tips', 'sug_healthy_foods', 'sug_exercise', 'sug_prevention', 'sug_routine', 'sug_home_remedies'],
 };
 
 const CATEGORY_INFO = {
