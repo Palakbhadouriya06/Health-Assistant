@@ -3348,10 +3348,26 @@ function isFollowUp(message) {
   return FOLLOW_UP_PHRASES.some(phrase => m.includes(phrase));
 }
 
+const SYMPTOM_RELATED_DISEASES = {
+  headache: ['migraine', 'tension', 'sinusitis', 'hypertension', 'eye strain'],
+  fever: ['common cold', 'flu', 'dengue', 'malaria', 'typhoid', 'infection'],
+  cough: ['asthma', 'allergies', 'bronchitis', 'common cold', 'flu', 'tuberculosis'],
+  stomach: ['IBS', 'gastritis', 'food poisoning', 'acid reflux', 'constipation'],
+  backpain: ['sciatica', 'herniated disc', 'muscle strain', 'kidney stones', 'arthritis'],
+  dizziness: ['vertigo', 'anemia', 'low blood pressure', 'inner ear disorder', 'dehydration'],
+  skincare: ['eczema', 'psoriasis', 'allergic reaction', 'acne', 'contact dermatitis'],
+  dental: ['cavities', 'gingivitis', 'tooth infection', 'gum disease', 'oral hygiene'],
+  digestion: ['IBS', 'GERD', 'food intolerance', 'stomach infection', 'indigestion'],
+  immunity: ['vitamin deficiency', 'chronic stress', 'poor sleep', 'poor nutrition'],
+  weight: ['thyroid disorders', 'PCOS', 'insulin resistance', 'metabolic syndrome'],
+  bone: ['osteoporosis', 'osteopenia', 'vitamin D deficiency', 'calcium deficiency'],
+  anemia: ['iron deficiency', 'B12 deficiency', 'chronic disease', 'heavy periods'],
+  eye: ['cataract', 'glaucoma', 'conjunctivitis', 'refractive error', 'dry eye'],
+  hygiene: ['skin infections', 'dental problems', 'body odor', 'foot fungus']
+};
+
 function getLastRealUserMessage(history) {
   if (!history || history.length === 0) return null;
-  // Walk backwards through history to find the last user message
-  // that is NOT itself a follow-up
   for (let i = history.length - 1; i >= 0; i--) {
     if (history[i].sender === 'user') {
       if (!isFollowUp(history[i].text)) {
@@ -3365,13 +3381,6 @@ function getLastRealUserMessage(history) {
 function getLastTopicFromHistory(history) {
   const lastRealMsg = getLastRealUserMessage(history);
   if (!lastRealMsg) return null;
-
-  // Try dailylife detection first (more specific)
-  const dlKey = Object.keys(DAILYLIFE_INDEX_MAP).find(key => {
-    // Redetect the original message using detectSpecificCondition
-    return false; // We'll just use detectSpecificCondition
-  });
-
   return detectSpecificCondition(lastRealMsg);
 }
 
@@ -3379,29 +3388,45 @@ function getFollowUpResponse(history) {
   const lastTopic = getLastTopicFromHistory(history);
   if (!lastTopic) return pickRandom(RESPONSES.general, 'general');
 
-  // If the topic has a CONTINUATIONS entry, use it
+  // 1. Full continuation content available
   if (CONTINUATIONS[lastTopic]) {
     return `### More Information\n\n${CONTINUATIONS[lastTopic]}`;
   }
 
-  // If it's a dailylife subtopic, return continuation from the same entry
+  // 2. Dailylife subtopics — pivot to related dailylife topic
   if (lastTopic.startsWith('dailylife_')) {
-    return `I'd be happy to share more about this topic.\n\nFor more health information on this and related topics, feel free to ask a specific question!`;
+    const dlName = lastTopic.replace('dailylife_', '');
+    return `### More on This Topic\n\nHere are some related questions you might find useful:\n\n• How does it affect your overall health?\n• What are healthier alternatives?\n• How much is too much (or too little)?\n• Who should be extra careful?\n\n*If you have a specific question about this topic, feel free to ask!*`;
   }
 
-  // For topics with response arrays, try to get a different variant
-  if (RESPONSES[lastTopic] && RESPONSES[lastTopic].length > 0) {
+  // 3. Symptoms — pivot to related conditions
+  if (SYMPTOM_RELATED_DISEASES[lastTopic]) {
+    const related = SYMPTOM_RELATED_DISEASES[lastTopic];
+    let resp = `### Related Conditions\n\nIf you're experiencing this symptom, here are some conditions you might want to learn more about:\n\n`;
+    related.forEach(c => { resp += `• ${c.charAt(0).toUpperCase() + c.slice(1)}\n`; });
+    resp += `\n**⚠️ Important:** I'm an educational tool, not a diagnostic one. Many conditions share similar symptoms — only a doctor can determine the actual cause after examining you.`;
+    return resp;
+  }
+
+  // 4. Multi-entry topics — try a different variant
+  if (RESPONSES[lastTopic] && RESPONSES[lastTopic].length > 1) {
     return pickRandom(RESPONSES[lastTopic], lastTopic + '_followup');
   }
 
-  // If the original is a general topic (nutrition, exercise, etc.), use continuation
-  const generalContinuations = ['nutrition', 'exercise', 'sleep', 'stress', 'firstaid', 'prevention',
-    'womenshealth', 'childhealth', 'elderlycare'];
-  if (generalContinuations.includes(lastTopic) && CONTINUATIONS[lastTopic]) {
-    return `### More Information\n\n${CONTINUATIONS[lastTopic]}`;
+  // 5. Vaccine / test / medicine topics — offer more specific angle
+  if (['vaccinations', 'medicaltests', 'medicines', 'prevention', 'disease'].includes(lastTopic)) {
+    const tips = {
+      vaccinations: "If you're wondering which vaccines are recommended for your age group or travel plans, ask me a more specific question!",
+      medicaltests: 'Ask me about specific tests like blood tests, X-rays, MRIs, or ECGs — I can explain what they check for!',
+      medicines: 'Feel free to ask about a specific type of medicine — pain relievers, antibiotics, allergy meds, or supplements.',
+      prevention: 'Prevention covers many areas — diet, exercise, sleep, stress, vaccines, screenings. What aspect interests you most?',
+      disease: 'Ask me about a specific disease or condition for more detailed information.'
+    };
+    return `### More on This Topic\n\n${tips[lastTopic] || 'What specific aspect would you like to explore further?'}`;
   }
 
-  return `I hope the information I shared was helpful! Is there a specific aspect you'd like to explore further? You can ask me about symptoms, causes, prevention tips, or related health topics.`;
+  // 6. Everything else — contextual fallback
+  return `I hope that information was helpful! To learn more, try asking about:\n\n• Causes and risk factors\n• Prevention tips\n• Related symptoms or conditions\n• When to see a doctor\n• Treatment options (always consult a doctor for personal medical advice)`;
 }
 
 // ────────────────────────────────────────────────────────────────────────────
