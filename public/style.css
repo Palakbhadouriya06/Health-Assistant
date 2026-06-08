@@ -878,6 +878,52 @@ body, html {
   .suggestion-chip { font-size: 11px; padding: 6px 10px; }
 }
 
+.user-menu-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+.user-menu-wrapper:hover {
+  border-color: var(--primary);
+}
+.user-avatar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-dark);
+  padding-right: 8px;
+  border-right: 1px solid var(--border-color);
+}
+.user-avatar svg {
+  color: var(--primary);
+}
+.btn-logout-icon {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  padding: 0;
+}
+.btn-logout-icon:hover {
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
 .category-modal {
   position: fixed;
   top: 0; left: 0;

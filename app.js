@@ -445,7 +445,36 @@ function init() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', init);
+// ==========================================================================
+// Auth Check — redirect to login if not authenticated
+// ==========================================================================
+function getSession() {
+  try { return JSON.parse(localStorage.getItem('healthAssistantSession')); } catch(e) { return null; }
+}
+
+function requireAuth() {
+  const session = getSession();
+  if (!session || !session.email) {
+    window.location.href = 'login.html';
+    return null;
+  }
+  return session;
+}
+
+function logout() {
+  localStorage.removeItem('healthAssistantSession');
+  window.location.href = 'login.html';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const session = requireAuth();
+  if (!session) return;
+  const nameDisplay = document.getElementById('user-name-display');
+  if (nameDisplay) nameDisplay.textContent = session.name;
+  const logoutBtn = document.getElementById('logout-btn');
+  if (logoutBtn) logoutBtn.addEventListener('click', logout);
+  init();
+});
 
 // ==========================================================================
 // i18n Functions
