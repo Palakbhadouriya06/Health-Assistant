@@ -13,7 +13,7 @@ const RESPONSES = {
   emergency: [
     `🚨 **Please seek emergency medical help right away** 🚨
 
-If you or someone near you is having any of these symptoms, **call your local emergency number (911, 999, or 112) or go to the nearest hospital immediately:**
+If you or someone near you is having any of these symptoms, **call 102 (ambulance), 112, or your local emergency number immediately:**
 
 • Chest pain or pressure
 • Trouble breathing

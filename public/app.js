@@ -24,7 +24,7 @@ const I18N = {
     topic_fitness: "Fitness Tips",
     topic_sleep: "Sleep Hygiene",
     topic_tip: "Daily Tip",
-    safety_msg: "🛡️ I am an AI, not a doctor. I will not diagnose diseases or prescribe medicines. For emergencies, call 911.",
+    safety_msg: "🛡️ I am an AI, not a doctor. I will not diagnose diseases or prescribe medicines. For emergencies, call 102 (ambulance) or 112.",
     input_placeholder: "Ask about health, wellness, fitness...",
     no_history: "No history yet.",
     error_loading: "Error loading history.",
